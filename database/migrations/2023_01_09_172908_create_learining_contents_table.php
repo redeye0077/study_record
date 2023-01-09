@@ -12,8 +12,7 @@ return new class extends Migration
      * @return void
      */
     public function up()
-    {
-        
+    { 
         // learning_contentsテーブルの情報
         // Schema::create('learning_contents', function (Blueprint $table) {
         //     $table->increments('id');
