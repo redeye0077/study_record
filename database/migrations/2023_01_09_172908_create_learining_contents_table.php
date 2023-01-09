@@ -13,12 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        //learning_contentsテーブルの情報
+        
+        // learning_contentsテーブルの情報
         // Schema::create('learning_contents', function (Blueprint $table) {
         //     $table->increments('id');
         //     $table->integer('users_id');
         //     $table->string('learning_contents_id', 50);
-        // });
+        //  });
     }
 
     /**
