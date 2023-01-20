@@ -13,15 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        //usersテーブルの情報
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('goal', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('email', 255)->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password', 60);
-            $table->string('name', 50);
-            $table->rememberToken();
+            $table->unsignedInteger('monthly_goal_id');
+            $table->integer('hour');
+            $table->integer('minute');
             $table->timestamps();
+            // 外部キー
+            $table->foreign('monthly_goal_id')->references('id')->on('monthly_goal');
         });
     }
 
@@ -32,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('goal');
     }
 };

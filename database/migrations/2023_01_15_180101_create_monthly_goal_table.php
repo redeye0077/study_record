@@ -12,13 +12,13 @@ return new class extends Migration
      * @return void
      */
     public function up()
-    { 
-        // learning_contentsテーブルの情報
-        // Schema::create('learning_contents', function (Blueprint $table) {
-        //     $table->increments('id');
-        //     $table->integer('users_id');
-        //     $table->string('learning_contents_id', 50);
-        //  });
+    {
+        Schema::create('monthly_goal', function (Blueprint $table) {
+            $table->increments('id');
+            $table->date('month');
+            $table->boolean('achieved');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('learning_contents');
+        Schema::dropIfExists('monthly_goal');
     }
 };
