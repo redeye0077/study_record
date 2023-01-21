@@ -13,15 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        //usersテーブルの情報
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('user_group', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('email', 255)->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password', 60);
-            $table->string('name', 50);
-            $table->rememberToken();
+            $table->unsignedInteger('users_id');
+            $table->unsignedInteger('groups_id');
             $table->timestamps();
+            // 外部キー
+            $table->foreign('users_id')->references('id')->on('users');
+            $table->foreign('groups_id')->references('id')->on('groups');
         });
     }
 
@@ -32,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('user_group');
     }
 };
