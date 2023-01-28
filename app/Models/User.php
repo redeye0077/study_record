@@ -47,7 +47,7 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Study');
     }
 
-    public function categories(): BelongsToMany
+    public function categories()
     {
         return $this->belongsToMany(Group::class);
     }

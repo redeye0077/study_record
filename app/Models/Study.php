@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Study extends Model
 {
 
-protected $guarded = ['id', 'users_id', 'goal_id'];
+protected $guarded = ['id'];
 
 public function user()
 {

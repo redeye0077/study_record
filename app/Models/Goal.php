@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Goal extends Model
 {
     protected $table = 'goal';
-    protected $guarded = ['id', 'monthly_goal_id'];
+    protected $guarded = ['id'];
 
     public function Monthly_goal()
 {

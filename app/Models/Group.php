@@ -9,7 +9,7 @@ class Group extends Model
 {
     protected $guarded = ['id'];
 
-    public function categories(): BelongsToMany
+    public function categories()
     {
         return $this->belongsToMany(User::class);
     }
