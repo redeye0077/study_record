@@ -20,6 +20,7 @@ class AuthenticatedSessionController extends Controller
         return view('auth.login');
     }
 
+
     /**
      * Handle an incoming authentication request.
      */
@@ -43,6 +44,6 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('/login');
     }
 }
