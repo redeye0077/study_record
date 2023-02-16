@@ -20,10 +20,11 @@ class RedirectIfAuthenticated
     public function handle(Request $request, Closure $next, ...$guards)
     {
         $guards = empty($guards) ? [null] : $guards;
-
+        
+        // ログイン済みのユーザーが再度ログイン画面にアクセスしたときの遷移先
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
-                return redirect(RouteServiceProvider::HOME);
+                return redirect('/index');
             }
         }
 

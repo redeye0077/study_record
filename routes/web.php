@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -29,3 +29,41 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::middleware(['auth'])->group(function () {
+    // index画面のルート設定
+    Route::get('/index', 'App\Http\Controllers\IndexController@index')->name('index.index');
+
+    // share画面のルート設定
+    Route::get('/share', 'App\Http\Controllers\ShareController@index')->name('share.index');
+
+    // group_share画面のルート設定
+    Route::get('/group_share', 'App\Http\Controllers\Group_ShareController@index')->name('group_share.index');
+
+    // subject画面のルート設定
+    Route::get('/subject', 'App\Http\Controllers\SubjectController@index')->name('subject.index');
+
+    // study_challenges画面のルート設定
+    Route::get('/study_challenges', 'App\Http\Controllers\Study_ChallengesController@index')->name('study_challenges.index');
+
+    // study_challenges/new画面のルート設定
+    Route::get('/study_challenges/new', 'App\Http\Controllers\Study_Challenges_NewController@index')->name('study_challenges_new.index');
+
+    // calendar画面のルート設定
+    Route::get('/calendar', 'App\Http\Controllers\CalendarController@index')->name('calendar.index');
+
+    // study_log画面のルート設定
+    Route::get('/study_log', 'App\Http\Controllers\Study_LogController@index')->name('study_log.index');
+
+    // settings画面のルート設定
+    Route::get('/settings', 'App\Http\Controllers\SettingsController@index')->name('settings.index');
+
+    // settings/login_id画面のルート設定
+    Route::get('/settings/login_id', 'App\Http\Controllers\Settings_Login_IDController@index')->name('settings_login_id.index');
+
+    // settings/password画面のルート設定
+    Route::get('/settings/password', 'App\Http\Controllers\Settings_PasswordController@index')->name('settings_password.index');
+
+    // settings/withdrawal画面のルート設定
+    Route::get('/settings/withdrawal', 'App\Http\Controllers\Settings_WithdrawalController@index')->name('settings_withdrawal.index');
+});
