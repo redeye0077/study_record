@@ -66,4 +66,5 @@ Route::middleware(['auth'])->group(function () {
 
     // settings/withdrawal画面のルート設定
     Route::get('/settings/withdrawal', 'App\Http\Controllers\Settings_WithdrawalController@index')->name('settings_withdrawal.index');
+    Route::post('/settings/withdrawal', 'App\Http\Controllers\Settings_WithdrawalController@withdrawal')->name('settings_withdrawal.withdrawal');
 });
