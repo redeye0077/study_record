@@ -25,7 +25,7 @@ Route::get('/dashboard', function () {
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 require __DIR__.'/auth.php';
@@ -66,5 +66,5 @@ Route::middleware(['auth'])->group(function () {
 
     // settings/withdrawal画面のルート設定
     Route::get('/settings/withdrawal', 'App\Http\Controllers\Settings_WithdrawalController@index')->name('settings_withdrawal.index');
-    Route::post('/settings/withdrawal', 'App\Http\Controllers\Settings_WithdrawalController@withdrawal')->name('settings_withdrawal.withdrawal');
+    Route::post('/settings/withdrawal', 'App\Http\Controllers\Settings_WithdrawalController@withdrawal')->name('settings.withdrawal.post');
 });
