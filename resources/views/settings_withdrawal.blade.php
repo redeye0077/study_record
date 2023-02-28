@@ -5,7 +5,7 @@
 
 <div class="btn-group">
 
-    <form id="withdrawal-form" method="post">
+    <form action="{{ route('settings.withdrawal.post') }}" method="post">
     @csrf
     @method('POST')
     <button type="submit" class="py-2 px-3 bg-red-400 rounded-lg text-white">退会する</button>
