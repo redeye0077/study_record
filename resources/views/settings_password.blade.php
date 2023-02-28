@@ -1,4 +1,4 @@
-{{-- <form method="post" action="{{ route('password.update') }}" class="mt-6 space-y-6">
+<form method="post" action="{{ route('password.update') }}" class="mt-6 space-y-6">
     @csrf
     @method('put')
 
@@ -35,4 +35,4 @@
     </div>
 </form>
 
-<a href="/settings" class="btn return_settings">キャンセル</a> --}} --}}
+<a href="/settings" class="btn return_settings">キャンセル</a>
