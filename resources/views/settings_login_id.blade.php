@@ -1,10 +1,14 @@
-<h1>settings_login_id</h1>
-<h1>メールアドレスの更新</h1>
-    <div>
-        <x-input-label for="email" :value="__('メール')" />
-        <x-text-input id="email" name="email" type="email" class="mt-1 block w-full"/>
-        {{-- :value="old('email', $user->email)" required autocomplete="email" /> --}}
-        <x-input-error class="mt-2" :messages="$errors->get('email')" />
+<form method="POST" action="{{ route('settings.login_id.update') }}">
+    @csrf
+    @method('PUT')
+    <div class="form-group">
+        <label for="name">新しいログインID</label>
+        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') ?? Auth::user()->name }}" required autocomplete="name" autofocus>
+        @error('name')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+        @enderror
     </div>
-            <a href="#" class="btn mail_change">変更する</a>
-            <a href="/settings" class="btn return_settings">キャンセル</a>
+    <button type="submit" class="btn btn-primary">更新</button>
+</form>

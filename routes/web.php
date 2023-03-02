@@ -59,12 +59,18 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/settings', 'App\Http\Controllers\SettingsController@index')->name('settings.index');
 
     // settings/login_id画面のルート設定
-    Route::get('/settings/login_id', 'App\Http\Controllers\Settings_Login_IDController@index')->name('settings_login_id.index');
+    // Route::get('/settings/login_id', 'App\Http\Controllers\Settings_Login_IDController@index')->name('settings.login_id');
+    // Route::post('/settings/login_id', 'App\Http\Controllers\Settings_Login_IDController@index')->name('settings.login_id.update');
 
     // settings/password画面のルート設定
     Route::get('/settings/password', 'App\Http\Controllers\Settings_PasswordController@index')->name('settings_password.index');
 
     // settings/withdrawal画面のルート設定
     Route::get('/settings/withdrawal', 'App\Http\Controllers\Settings_WithdrawalController@index')->name('settings_withdrawal.index');
-    Route::post('/settings/withdrawal', 'App\Http\Controllers\Settings_WithdrawalController@withdrawal')->name('settings.withdrawal.post');
+    Route::put('/settings/withdrawal', 'App\Http\Controllers\Settings_WithdrawalController@withdrawal')->name('settings.withdrawal.post');
+});
+
+Route::prefix('settings')->middleware('auth')->group(function () {
+    Route::get('/login_id', 'App\Http\Controllers\Settings_Login_IDController@index')->name('settings.login_id');
+    Route::match(['put', 'patch'], '/login_id', 'App\Http\Controllers\Settings_Login_IDController@update')->name('settings.login_id.update');
 });
