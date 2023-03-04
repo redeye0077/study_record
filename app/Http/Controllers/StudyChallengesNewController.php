@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class Settings_PasswordController extends Controller
+class StudyChallengesNewController extends Controller
 {
     public function index()
     {
-        return view('settings_password');
+        return view('StudyChallengesNew');
     }
 }

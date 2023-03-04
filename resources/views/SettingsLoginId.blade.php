@@ -1,4 +1,4 @@
-<form method="POST" action="{{ route('settings.login_id.update') }}">
+<form method="POST" action="{{ route('SettingsLoginId.update') }}">
     @csrf
     @method('PUT')
     <div class="form-group">
