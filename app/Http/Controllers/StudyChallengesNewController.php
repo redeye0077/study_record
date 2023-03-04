@@ -8,6 +8,6 @@ class StudyChallengesNewController extends Controller
 {
     public function index()
     {
-        return view('StudyChallengesNew');
+        return view('study_challenges_new');
     }
 }

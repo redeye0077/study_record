@@ -10,7 +10,7 @@ class SettingsLoginIdController extends Controller
 {
     public function index()
     {
-        return view('SettingsLoginId');
+        return view('settings_login_id');
     }
 
     public function update(SettingsLoginIdRequest $request)

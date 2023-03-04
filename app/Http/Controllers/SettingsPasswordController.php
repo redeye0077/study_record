@@ -8,6 +8,6 @@ class SettingsPasswordController extends Controller
 {
     public function index()
     {
-        return view('SettingsPassword');
+        return view('settings_password');
     }
 }

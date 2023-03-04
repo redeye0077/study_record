@@ -8,6 +8,6 @@ class GroupShareController extends Controller
 {
     public function index()
     {
-        return view('GroupShare');
+        return view('group_share');
     }
 }
