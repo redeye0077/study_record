@@ -1,4 +1,4 @@
-<form method="POST" action="{{ route('SettingsLoginId.update') }}">
+<form method="POST" action="{{ route('settings.login.id.update') }}">
     @csrf
     @method('PUT')
     <div class="form-group">
@@ -10,5 +10,5 @@
             </span>
         @enderror
     </div>
-    <button type="submit" class="btn btn-primary">更新</button>
+    <button type="submit" class="btn_btn-primary">更新</button>
 </form>

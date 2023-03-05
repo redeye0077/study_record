@@ -5,13 +5,13 @@
 
 <div class="btn-group">
 
-    <form action="{{ route('settings_withdrawal.post') }}" method="post">
+    <form action="{{ route('settings.withdrawal.post') }}" method="post">
     @csrf
     @method('POST')
     <button type="submit" class="py-2 px-3 bg-red-400 rounded-lg text-white">退会する</button>
     </form>
 
     <div class='ml-3'>
-        <a href="/settings" class="btn ReturnSettings">キャンセル</a>
+        <a href="/settings" class="btn_return_settings">キャンセル</a>
     </div>
 </div>
