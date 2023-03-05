@@ -35,4 +35,4 @@
     </div>
 </form>
 
-<a href="/settings" class="btn return_settings">キャンセル</a>
+<a href="/settings" class="btn_return_settings">キャンセル</a>

@@ -12,6 +12,6 @@
     </form>
 
     <div class='ml-3'>
-        <a href="/settings" class="btn return_settings">キャンセル</a>
+        <a href="/settings" class="btn_return_settings">キャンセル</a>
     </div>
 </div>
