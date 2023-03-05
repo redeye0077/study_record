@@ -10,5 +10,6 @@
             </span>
         @enderror
     </div>
-    <button type="submit" class="btn_btn-primary">更新</button>
+    <button type="submit" class="btn_btn-primary">変更する</button>
 </form>
+<a href="/settings" class="btn_return_settings">キャンセル</a>
