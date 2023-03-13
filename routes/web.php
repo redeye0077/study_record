@@ -47,6 +47,7 @@ Route::middleware(['auth'])->group(function () {
 
     // study_challenges/new画面のルート設定
     Route::get('/study_challenges/new', 'App\Http\Controllers\StudyChallengesNewController@index')->name('study.challenges.new.index');
+    Route::post('/study_challenges/new', 'App\Http\Controllers\StudyChallengesNewController@store')->name('study.challenges.new.store');
 
     // calendar画面のルート設定
     Route::get('/calendar', 'App\Http\Controllers\CalendarController@index')->name('calendar.index');

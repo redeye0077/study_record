@@ -16,7 +16,9 @@ return new class extends Migration
         Schema::create('monthly_goal', function (Blueprint $table) {
             $table->increments('id');
             $table->date('month');
-            $table->boolean('achieved');
+            $table->boolean('achieved')->default(false);
+            $table->integer('target_hour');
+            $table->integer('target_minutes');
             $table->timestamps();
         });
     }

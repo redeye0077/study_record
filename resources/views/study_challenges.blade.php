@@ -1,7 +1,5 @@
-<h1>study_challenges</h1>
-
 <div>
-    <p>今月の目標時間<input type="text" name="target_hour" value="">時間<input type="text" name="target_minutes" value="">分</p>
+    <p>今月の目標時間<input type="text" name="target_hour" value="{{ $monthlyGoal ? $monthlyGoal->target_hour : '' }}">時間<input type="text" name="target_minutes" value="{{ $monthlyGoal ? $monthlyGoal->target_minutes : '' }}">分</p>
 </div>
 
 <div>
