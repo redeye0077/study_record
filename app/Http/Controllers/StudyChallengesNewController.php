@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\MonthlyGoal;
+use App\Http\Requests\StudyChallengesNewRequest;
 
 class StudyChallengesNewController extends Controller
 {
@@ -13,7 +14,7 @@ class StudyChallengesNewController extends Controller
         return view('study_challenges_new');
     }
 
-    public function store(Request $request)
+    public function store(StudyChallengesNewRequest $request)
     {
         //フォームから入力値を取得する
         $target_hour = $request->input('target_hour');
