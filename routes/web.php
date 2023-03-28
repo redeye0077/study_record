@@ -54,6 +54,7 @@ Route::middleware(['auth'])->group(function () {
 
     // study_log画面のルート設定
     Route::get('/study_log', 'App\Http\Controllers\StudyLogController@index')->name('study.log.index');
+    Route::post('/study_log', 'App\Http\Controllers\StudyLogController@store')->name('study.log.store');
 
     // settings画面のルート設定
     Route::get('/settings', 'App\Http\Controllers\SettingsController@index')->name('settings.index');
