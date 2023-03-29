@@ -14,7 +14,7 @@
         const subjects = JSON.parse(`{!! $subjects !!}`);
         const data = JSON.parse(`{!! $data !!}`);
 
-        const truncatedDates = dates.slice(dates.length - 7, dates.length);
+        const truncatedDates = dates.slice(Math.max(dates.length - 7, 0));
 
         //日付ごとの学習時間を集計
         const datasets = subjects.map((subject) => {
