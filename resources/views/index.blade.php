@@ -5,4 +5,10 @@
 <a href="/calendar" class="btn_calendar">学習時間の表示</a>
 <a href="/study_challenges" class="btn_study_challenges">目標</a>
 <a href="/settings" class="btn_settings">設定</a>
-<a href="#" class="btn_logout">ログアウトする</a>
+<form method="POST" action="{{ route('logout') }}">
+    @csrf
+
+    <button type="submit" class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
+        {{ __('ログアウトする') }}
+    </button>
+</form>
