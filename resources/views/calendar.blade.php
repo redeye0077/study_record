@@ -14,6 +14,7 @@
         const subjects = JSON.parse(`{!! $subjects !!}`);
         const data = JSON.parse(`{!! $data !!}`);
 
+        //最新の7日分の日付を取得
         const truncatedDates = dates.slice(Math.max(dates.length - 7, 0));
 
         //日付ごとの学習時間を集計
@@ -108,3 +109,5 @@
     </script>
 </body>
 </html>
+
+<a href="/index" class="btn_return_index">メイン画面に戻る</a>
