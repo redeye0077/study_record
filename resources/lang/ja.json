@@ -11,11 +11,15 @@
     "Send Password Reset Link":"パスワードリセットリンク送信",
     "Logout":"ログアウト",
 
+    "Hello!":"こんにちは！",
     "Verify Your Email Address":"ユーザ登録を完了してください",
     "A fresh verification link has been sent to your email address.":"新しいリンクをあなたのメールアドレスに送信しました。",
     "Before proceeding, please check your email for a verification link.":"メールに記載されているリンクをクリックして、登録手続きを完了してください。",
     "If you did not receive the email":"メールが届いていなければ、",
     "click here to request another":"こちらをクリックして再送信してください。",
+    "Regards": "どうぞよろしくお願い致します",
+    "Please click the button below to verify your email address.": "以下のボタンをクリックしてメールアドレスを認証してください。",
+    "If you're having trouble clicking the \":actionText\" button, copy and paste the URL below\ninto your web browser:": "もし \":actionText\" ボタンがクリックできない場合は、以下に表示されているURLを直接ブラウザにコピー&ペーストしてください。:",
 
     "Please click the link below to verify your email address.":"メールアドレスを確認するために下のリンクをクリックしてください。",
     "Verify Email Address":"メールアドレス確認",
