@@ -24,7 +24,7 @@ class StudyLogController extends Controller
 
         //StudyLogモデルを使ってDBに保存する
         $studyLog = new StudyLog();
-        $studyLog->users_id = auth()->user()->id;
+        $studyLog->user_id = auth()->user()->id;
         $studyLog->hour = $hour;
         $studyLog->minutes = $minutes;
         $studyLog->duration = $hour * 60 + $minutes;
@@ -33,6 +33,6 @@ class StudyLogController extends Controller
         $studyLog->save();
 
         ///study_logに戻る
-        return redirect('/study_log')->with('success', 'Study log saved successfully!');
+        return redirect('/study_log')->with('success', '学習記録が正常に保存されました！');
     }
 }

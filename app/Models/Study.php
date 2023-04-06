@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Study extends Model
 {
 
-    protected $fillable = ['users_id', 'date', 'hour', 'minutes', 'subject', 'study_time', 'month', 'duration'];
+    protected $fillable = ['user_id', 'date', 'hour', 'minutes', 'subject', 'study_time', 'month', 'duration'];
 
 
     protected $guarded = ['id'];

@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('group_user', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('users_id');
+            $table->unsignedInteger('user_id');
             $table->unsignedInteger('groups_id');
             $table->timestamps();
             // 外部キー
-            $table->foreign('users_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('groups_id')->references('id')->on('groups');
         });
     }

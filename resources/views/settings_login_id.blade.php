@@ -10,6 +10,13 @@
             </span>
         @enderror
     </div>
+
+    @if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+    @endif
+
     <button type="submit" class="btn_btn-primary">変更する</button>
 </form>
 <a href="/settings" class="btn_return_settings">キャンセル</a>
