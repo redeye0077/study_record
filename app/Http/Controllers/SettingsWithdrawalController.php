@@ -24,6 +24,7 @@ class SettingsWithdrawalController extends Controller
         $user = Auth::user();
 
         if ($user) {
+            $user->studies()->delete();
             $user->forceDelete();
             Auth::logout();
             $request->session()->invalidate();

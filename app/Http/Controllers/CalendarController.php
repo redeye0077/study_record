@@ -13,7 +13,7 @@ class CalendarController extends Controller
         // studiesテーブルから日付と学習時間を取得
         $studies = DB::table('studies')
         ->select('date', 'subject', DB::raw('SUM(hour * 60 + minutes) as duration'))
-        ->where('users_id', Auth::id())
+        ->where('user_id', Auth::id())
         ->groupBy('date', 'subject')
         ->orderBy('date', 'asc')
         ->get();

@@ -31,6 +31,6 @@ class StudyChallengesNewController extends Controller
         ]);
 
         ///study_challengesに戻る
-        return redirect('/study_challenges')->with('success', 'Monthly goal saved successfully!');
+        return redirect('/study_challenges')->with('success', '月間目標が正常に保存されました！');
     }
 }

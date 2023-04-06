@@ -19,6 +19,6 @@ class SettingsLoginIdController extends Controller
         $user->name = $request->input('name');
         $user->save();
 
-        return redirect()->route('settings.login.id')->with('success', '名前を更新しました');
+        return redirect()->route('settings.login.id')->with('success', '名前を更新しました!');
     }
 }

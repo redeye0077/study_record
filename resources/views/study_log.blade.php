@@ -8,6 +8,23 @@
 <body>
   <form method="POST" action="{{ route('study.log.store') }}">
     @csrf
+
+    @if($errors->any())
+      <div class="alert alert-danger">
+        <ul>
+          @foreach($errors->all() as $error)
+            <li>{{ $error }}</li>
+          @endforeach
+        </ul>
+      </div>
+    @endif
+
+    @if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+    @endif
+    
     <div>
       <label for="date">学習日</label>
       <input type="text" name="date" id="date">

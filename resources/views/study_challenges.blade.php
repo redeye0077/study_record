@@ -9,5 +9,11 @@
     </p>
 </div>
 
+@if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
 <a href="/study_challenges/new" class="btn_move_study_challenges_new">今月の目標時間を設定する</a>
 <a href="/index" class="btn_return_index">メイン画面に戻る</a>

@@ -47,9 +47,9 @@ class StudyLogRequest extends FormRequest
     public function attributes()
     {
         return [
-            'hour' => '時間',
-            'minutes' => '分',
-            'subject' => '科目',
+            'hour' => '学習時間',
+            'minutes' => '学習分',
+            'subject' => '学習内容',
             'date' => '日付',
         ];
     }

@@ -13,16 +13,21 @@ return new class extends Migration
      */
     public function up()
     {
+//         Schema::table('studies', function (Blueprint $table) {
+//         $table->dropForeign(['user_id']);
+//     });
+
+// }
         Schema::create('studies', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('users_id');
+            $table->unsignedInteger('user_id');
             $table->date('date');
             $table->integer('hour');
             $table->integer('minutes');
             $table->string('subject', 50);
             $table->timestamps();
             //外部キー
-            $table->foreign('users_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
