@@ -1,20 +1,114 @@
-<form method="POST" action="{{ route('study.challenges.new.store') }}">
-    @csrf
-    <div>
-        <p>今月の目標時間<input type="text" name="target_hour" value="">時間<input type="text" name="target_minutes" value="">分</p>
-    </div>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  <title>学習目標を設定する</title>
+  <style>
+      body {
+        background-color: #f5f5f5;
+        font-family: 'Nunito', sans-serif;
+        font-weight: 200;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      .container {
+        padding: 2rem;
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        max-width: 500px;
+        width: 100%;
+        margin: 1rem;
+      }
+      input {
+        width: 6rem;
+        height: 3rem;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        border: none;
+        background-color: #f5f5f5;
+        text-align: center;
+      }
+      .target_time input {
+        font-size: 1.1rem;
+        font-weight: bold;
+      }
+      p {
+        font-size: 1.5rem;
+        text-align: center;
+        padding: 1rem 0;
+        margin: 1rem;
+      }
+      span {
+        font-size: 1.4rem;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+      }
+      .button-container {
+        display: flex;
+        justify-content: center;
+        margin: 2rem 0.5rem;
+      }
+      button {
+        width: 15rem;
+        height: 2.5rem;
+        margin: 0.5rem;
+      }
 
-    <button type="submit" class="btn_set_goal">設定する</button>
-
-    @if($errors->any())
-      <div class="alert alert-danger">
-        <ul>
-          @foreach($errors->all() as $error)
-            <li>{{ $error }}</li>
-          @endforeach
-        </ul>
+      /* メディアクエリ */
+      @media (max-width: 640px) {
+        .container {
+          padding: 1rem;
+        }
+        .button-container {
+          flex-direction: column;
+          align-items: center;
+        }
+        input {
+          width: 4rem;
+        }
+        button {
+          margin-top: 0.5rem;
+        }
+      }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form method="POST" action="{{ route('study.challenges.new.store') }}">
+      @csrf
+      <div class="target_time">
+        <p>今月の目標時間</p>
+        <input type="text" name="target_hour" value=""><span>時間</span>
+        <input type="text" name="target_minutes" value=""><span>分</span>
       </div>
-    @endif
 
-</form>
-<a href="/study_challenges" class="btn_return_study_challenges_new">目標画面に戻る</a>
+      @if($errors->any())
+        <div class="alert alert-danger">
+          <ul>
+            @foreach($errors->all() as $error)
+              <li>{{ $error }}</li>
+            @endforeach
+          </ul>
+        </div>
+      @endif
+
+      <div class="button-container">
+        <button type="submit" class="btn-blue">設定する</button>
+        <button type="button" class="btn-red" onclick="location.href='/study_challenges';">
+          キャンセル
+        </button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
