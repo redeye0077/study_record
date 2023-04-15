@@ -153,6 +153,9 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'current_password' => '現在のパスワード',
+        'password' => 'パスワード',
+    ],
 
 ];
