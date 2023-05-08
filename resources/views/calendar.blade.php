@@ -17,7 +17,7 @@
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          height: 100vh;
+          height: auto;
         }
         h1 {
         font-size: 2rem;
@@ -26,24 +26,30 @@
         button {
             width: 10rem;
             height: 2.5rem;
-            margin: 0.5rem;
+            margin: 2rem;
         }
-
         /* メディアクエリ */
         @media (max-width: 640px) {
-            .button-container {
-                flex-direction: column;
-                align-items: center;
-            }
             button {
-                margin-top: 0.5rem;
+                width: 100%;
+                max-width: 10rem;
+                height: 2.5rem;
+                margin: 2rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            #myChart {
+                height: 300px;
             }
         }
     </style>
 </head>
 <body>
     <h1>学習時間</h1>
-    <canvas id="myChart"></canvas>
+    <div style="width: 100%; height: 500px">
+        <canvas id="myChart"></canvas>
+    </div>
     <script>
         // ビューから渡されたデータを変数に代入
         const dates = JSON.parse(`{!! $dates !!}`);
@@ -112,6 +118,8 @@
                 datasets: datasets,
             },
             options: {
+                responsive: true,
+                maintainAspectRatio: false,
                 scales: {
                     y: {
                         stacked : true,
