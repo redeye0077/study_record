@@ -48,7 +48,9 @@
             <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') ?? Auth::user()->name }}" required autocomplete="name" autofocus>
             @error('name')
                 <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
+                    <div class="text-sm text-red-600 dark:text-red-400 space-y-1">
+                        <strong>{{ $message }}</strong>
+                    </div>
                 </span>
             @enderror
         </div>
