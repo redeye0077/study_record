@@ -31,13 +31,13 @@
         }
         .button-container {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             margin-top: 1rem;
         }
         button {
-            width: 10rem;
+            width: 8rem;
             height: 2.5rem;
             margin: 1rem 0.5rem;
         }
@@ -47,6 +47,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            margin: 1rem 0.5rem;
+            width: 11rem;
             font-size: 1.0rem;
         }
         button[type="submit"]:hover {
@@ -59,7 +61,7 @@
                 align-items: center;
             }
             button {
-                margin-top: 0.5rem;
+                margin: 1rem 0.5rem;
             }
         }
     </style>
