@@ -24,7 +24,7 @@ class SettingsLoginIdRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|max:50|unique:users',
+            'name' => 'required|regex:/\A([a-zA-Z0-9])+\z/u|max:50|unique:users',
         ];
     }
 
@@ -34,6 +34,7 @@ class SettingsLoginIdRequest extends FormRequest
             'required' => ':attributeは必須です。',
             'max' => ':attributeは50文字以下で入力してください。',
             'unique' => 'その:attributeは既に使用されています。',
+            'regex' => ':attributeは英数字で入力してください。',
         ];
     }
 

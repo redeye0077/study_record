@@ -24,8 +24,8 @@ class StudyChallengesNewRequest extends FormRequest
     public function rules()
     {
         return [
-            'target_hour' => 'required|numeric|min:0',
-            'target_minutes' => 'required|numeric|min:0|max:59',
+            'target_hour' => 'required|integer|min:0',
+            'target_minutes' => 'required|integer|min:0|max:59',
         ];
     }
 
@@ -33,7 +33,7 @@ class StudyChallengesNewRequest extends FormRequest
     {
         return [
             'required' => ':attributeは必須です。',
-            'numeric' => ':attributeは数字で入力してください。',
+            'integer' => ':attributeは整数で入力してください。',
             'min' => ':attributeは0以上で入力してください。',
             'max' => ':attributeは59以下で入力してください。',
         ];
