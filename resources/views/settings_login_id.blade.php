@@ -26,6 +26,11 @@
             height: 2rem;
             margin: 0.5rem;
         }
+        .message {
+            font-size: 1rem;
+            text-align: center;
+            padding: 1rem 0.5rem 0.5rem 0;
+        }
         .button-container {
             display: flex;
             flex-wrap: wrap;
@@ -49,7 +54,7 @@
             @error('name')
                 <span class="invalid-feedback" role="alert">
                     <div class="text-sm text-red-600 dark:text-red-400 space-y-1">
-                        <strong>{{ $message }}</strong>
+                        <p class="message">{{ $message }}</p>
                     </div>
                 </span>
             @enderror

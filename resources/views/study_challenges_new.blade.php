@@ -63,6 +63,10 @@
         height: 2.5rem;
         margin: 0.5rem;
       }
+      p.message {
+        font-size: 1.2rem;
+        margin: 2rem 0 0 1rem;
+      }
 
       /* メディアクエリ */
       @media (max-width: 640px) {
@@ -86,21 +90,25 @@
   <div class="container">
     <form method="POST" action="{{ route('study.challenges.new.store') }}">
       @csrf
-      <div class="target_time">
-        <p>今月の目標時間</p>
-        <input type="text" name="target_hour" value=""><span>時間</span>
-        <input type="text" name="target_minutes" value=""><span>分</span>
-      </div>
-
-      @if($errors->any())
-        <div class="alert alert-danger">
-          <ul class="text-sm text-red-600 dark:text-red-400 space-y-1">
-            @foreach($errors->all() as $error)
-              <li>{{ $error }}</li>
-            @endforeach
-          </ul>
+      <div class="form-group">
+        <div class="target_time">
+          <p>今月の目標時間</p>
+            <input type="text" name="target_hour" value=""><span>時間</span>
+            <input type="text" name="target_minutes" value=""><span>分</span>
         </div>
-      @endif
+
+        @error('target_hour')
+          <div class="text-sm text-red-600">
+            <p class="message">{{ $message }}</p>
+          </div>
+        @enderror
+        
+        @error('target_minutes')
+          <div class="text-sm text-red-600">
+            <p class="message">{{ $message }}</p>
+          </div>
+        @enderror
+      </div>
 
       <div class="button-container">
         <button type="submit" class="btn-blue">設定する</button>
