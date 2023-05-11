@@ -17,6 +17,14 @@
             justify-content: center;
             height: 100vh;
         }
+        .alert {
+            font-size: 1.5rem;
+            width: 20rem;
+            height: 2rem;
+            margin: 0.5rem;
+            padding: 0 0 3rem 0;
+            text-align: center;
+        }
         h1 {
             font-size: 2rem;
             margin-bottom: 1rem;
@@ -67,6 +75,19 @@
     </style>
 </head>
 <body>
+
+    @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif    
+
+    @if(session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
+
     <h1>ログイン</h1>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
@@ -104,18 +125,6 @@
                 新規登録
             </button> 
         </div>    
-    
-        @if(session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
-            </div>
-        @endif    
-
-        @if(session('error'))
-            <div class="alert alert-danger">
-                {{ session('error') }}
-            </div>
-        @endif
     </form>
 </body>
 </html>

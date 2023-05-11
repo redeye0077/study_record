@@ -26,6 +26,10 @@
             height: 2rem;
             margin: 0.5rem;
         }
+        .alert {
+            font-size: 1.5rem;
+            padding: 0 0 1rem 0;
+        }
         .message {
             font-size: 1rem;
             text-align: center;
@@ -45,6 +49,13 @@
     </style>
 </head>
 <body>
+
+    @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+        @endif
+
     <form method="POST" action="{{ route('settings.login.id.update') }}" style="text-align:center;">
         @csrf
         @method('PUT')
@@ -59,12 +70,6 @@
                 </span>
             @enderror
         </div>
-
-        @if(session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-        @endif
 
         <div class="button-container">
             <button type="submit" class="btn-blue">

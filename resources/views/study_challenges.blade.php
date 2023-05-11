@@ -68,6 +68,12 @@
             height: 2.5rem;
             margin: 0.5rem;
         }
+        .alert {
+            font-size: 1.5rem;
+            width: 30rem;
+            height: 2rem;
+            text-align: center;
+        }
 
         /* メディアクエリ */
         @media (max-width: 640px) {
@@ -89,6 +95,13 @@
 </head>
 <body>
     <div class="container">
+
+        @if(session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+
         <div class="target-label">
             <p>今月の目標時間</p>
             <input type="text" name="target_hour" value="{{ $monthlyGoal ? $monthlyGoal->target_hour : '' }}"><span>時間</span>
@@ -100,12 +113,6 @@
             <input type="text" name="result_hour" value="{{ $resultHour }}" readonly><span>時間</span>
             <input type="text" name="result_minutes" value="{{ $resultMinutes }}" readonly><span>分</span>
         </div>
-    
-        @if(session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
-            </div>
-        @endif
     </div>
 
     <div class="button-container">

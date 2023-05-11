@@ -79,6 +79,12 @@
         margin-left: 0.5rem;
         margin-right: 0.5rem;
       }
+      .alert {
+        font-size: 1.5rem;
+        width: 30rem;
+        height: 2rem;
+        text-align: center;
+      }
       .button-container {
         display: flex;
         justify-content: center;

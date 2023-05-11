@@ -17,6 +17,10 @@
             justify-content: center;
             height: 100vh;
         }
+        p { 
+            font-size: 1.5rem;
+            text-align: center;
+        }
         .button-container {
             display: flex;
             flex-wrap: wrap;
@@ -56,7 +60,14 @@
 <form method="post" action="{{ route('password.update') }}" class="mt-6 space-y-6">
     @csrf
     @method('put')
-
+    @if (session('status') === 'password-updated')
+    <p
+        x-data="{ show: true }"
+        x-show="show"
+        x-transition
+        x-init="setTimeout(() => show = false, 2000)"
+    >{{ __('パスワードを変更しました!') }}</p>
+    @endif
     <div>
         <x-input-label for="current_password" :value="__('現在のパスワード')" />
         <x-text-input id="current_password" name="current_password" type="password" class="mt-1 block w-full" autocomplete="current-password" />
@@ -77,16 +88,6 @@
 
     <div class="button-container">
         <x-primary-button>{{ __('変更する') }}</x-primary-button>
-
-        @if (session('status') === 'password-updated')
-            <p
-                x-data="{ show: true }"
-                x-show="show"
-                x-transition
-                x-init="setTimeout(() => show = false, 2000)"
-                class="text-sm text-gray-600 dark:text-gray-400"
-            >{{ __('変更しました。') }}</p>
-        @endif
     </div>
 </form>
 <button type="button" class="btn-red" onclick="location.href='/settings';">
