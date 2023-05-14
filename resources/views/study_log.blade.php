@@ -68,10 +68,22 @@
         padding: 1rem 0;
         margin: 1rem;
       }
+      p.message {
+        font-size: 1rem;
+        text-align: center;
+        padding: 0.5rem 0;
+        margin: 0.5rem 0;
+      }
       span {
         font-size: 1.4rem;
         margin-left: 0.5rem;
         margin-right: 0.5rem;
+      }
+      .alert {
+        font-size: 1.5rem;
+        width: 30rem;
+        height: 2rem;
+        text-align: center;
       }
       .button-container {
         display: flex;
@@ -103,15 +115,6 @@
     <div class="container">
       <form method="POST" action="{{ route('study.log.store') }}">
         @csrf
-        @if($errors->any())
-          <div class="alert alert-danger">
-            <ul>
-              @foreach($errors->all() as $error)
-                <li>{{ $error }}</li>
-              @endforeach
-            </ul>
-          </div>
-        @endif
 
         @if(session('success'))
           <div class="alert alert-success">
@@ -120,22 +123,52 @@
         @endif
 
         <div class="study">
-          <div class="study-date">
-            <p>学習日</p>
-            <input type="text" name="date" id="date">
+          <div class="form-group">
+
+            <div class="study-date">
+              <p>学習日</p>
+              <input type="text" name="date" id="date" class="form-control" value="{{ old('date') }}">
+            </div>
+
+            @error('date')
+              <div class="text-sm text-red-600">
+                <p class="message">{{ $message }}</p>
+              </div>
+            @enderror
           </div>
 
-          <div class="study-contents">
-            <p>学習内容</p>
-            <input type="text" name="subject" id="subject">
+          <div class="form-group">
+            <div class="study-contents">
+              <p>学習内容</p>
+              <input type="text" name="subject" id="subject" class="form-control" value="{{ old('subject') }}">
+            </div>
+
+            @error('subject')
+              <div class="text-sm text-red-600">
+                <p class="message">{{ $message }}</p>
+              </div>
+            @enderror
           </div>
 
-          <div class="learning-date">
-            <p>学習時間</p>
-            <input type="number" name="hour" id="hour" min="0" max="24"><span>時間</span>
-            <input type="number" name="minutes" id="minutes" min="0" max="59"><span>分</span>
+          <div class="form-group">
+            <div class="learning-date">
+              <p>学習時間</p>
+              <input type="number" name="hour" id="hour" class="form-control" value="{{ old('hour') }}" min="0" max="24"><span>時間</span>
+              <input type="number" name="minutes" id="minutes" class="form-control" value="{{ old('minutes') }}" min="0" max="59"><span>分</span>               
+            </div>
+
+            @error('hour')
+              <div class="text-sm text-red-600">
+                <p class="message">{{ $message }}</p>
+              </div>
+            @enderror
+
+            @error('minutes')
+              <div class="text-sm text-red-600">
+                <p class="message">{{ $message }}</p>
+              </div>
+            @enderror  
           </div>
-        </div>
 
         <div class="button-container">
           <button type="submit" class="btn-blue">
@@ -145,6 +178,7 @@
             メイン画面に戻る
           </button>
         </div>
+
       </form>
     </div>
 

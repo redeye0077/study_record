@@ -17,6 +17,14 @@
             justify-content: center;
             height: 100vh;
         }
+        .alert {
+            font-size: 1.5rem;
+            width: 20rem;
+            height: 2rem;
+            margin: 0.5rem;
+            padding: 0 0 3rem 0;
+            text-align: center;
+        }
         h1 {
             font-size: 2rem;
             margin-bottom: 1rem;
@@ -31,13 +39,13 @@
         }
         .button-container {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             margin-top: 1rem;
         }
         button {
-            width: 10rem;
+            width: 8rem;
             height: 2.5rem;
             margin: 1rem 0.5rem;
         }
@@ -47,6 +55,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            margin: 1rem 0.5rem;
+            width: 11rem;
             font-size: 1.0rem;
         }
         button[type="submit"]:hover {
@@ -59,12 +69,25 @@
                 align-items: center;
             }
             button {
-                margin-top: 0.5rem;
+                margin: 1rem 0.5rem;
             }
         }
     </style>
 </head>
 <body>
+
+    @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif    
+
+    @if(session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
+
     <h1>ログイン</h1>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
@@ -102,18 +125,6 @@
                 新規登録
             </button> 
         </div>    
-    
-        @if(session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
-            </div>
-        @endif    
-
-        @if(session('error'))
-            <div class="alert alert-danger">
-                {{ session('error') }}
-            </div>
-        @endif
     </form>
 </body>
 </html>

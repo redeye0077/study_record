@@ -24,8 +24,8 @@ class StudyLogRequest extends FormRequest
     public function rules()
     {
         return [
-            'hour' => 'required|numeric|between:0,23',
-            'minutes' => 'required|numeric|between:0,59',
+            'hour' => 'required|integer|between:0,23',
+            'minutes' => 'required|integer|between:0,59',
             'subject' => 'required|string|max:50',
             'date' => 'required|date',
         ];
@@ -35,7 +35,7 @@ class StudyLogRequest extends FormRequest
     {
         return [
             'required' => ':attributeは必須です。',
-            'numeric' => ':attributeは数字で入力してください。',
+            'integer' => ':attributeは整数で入力してください。',
             'string' => ':attributeは文字で入力してください。',
             'max' => ':attributeは50文字以内で入力してください。',
             'date' => ':attributeは日付で入力してください。',
