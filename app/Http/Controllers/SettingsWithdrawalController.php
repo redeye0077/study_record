@@ -25,6 +25,7 @@ class SettingsWithdrawalController extends Controller
 
         if ($user) {
             $user->studies()->delete();
+            $user->monthlyGoals()->delete();
             $user->forceDelete();
             Auth::logout();
             $request->session()->invalidate();

@@ -22,6 +22,7 @@ class StudyChallengesNewController extends Controller
 
         //入力値をmonthly_goal_tableに保存する
         DB::table('monthly_goal')->insert([
+            'user_id' => $request->user()->id,
             'month' => date('Y-m') . '-01',
             'achieved' => false,
             'target_hour' => $target_hour,

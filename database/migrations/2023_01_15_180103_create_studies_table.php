@@ -13,11 +13,6 @@ return new class extends Migration
      */
     public function up()
     {
-//         Schema::table('studies', function (Blueprint $table) {
-//         $table->dropForeign(['user_id']);
-//     });
-
-// }
         Schema::create('studies', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('user_id');
