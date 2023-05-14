@@ -15,11 +15,14 @@ return new class extends Migration
     {
         Schema::create('monthly_goal', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('user_id');
             $table->date('month');
             $table->boolean('achieved')->default(false);
             $table->integer('target_hour');
             $table->integer('target_minutes');
             $table->timestamps();
+            //外部キー
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
