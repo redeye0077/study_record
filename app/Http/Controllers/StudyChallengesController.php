@@ -17,8 +17,10 @@ class StudyChallengesController extends Controller
         
         //monthly_goal_tableに保存されているtarget_hourとtarget_minutesを取得する
         $monthlyGoal = MonthlyGoal::where('user_id', $user->id)
-        ->where('month', $currentMonth)
-        ->first(['target_hour', 'target_minutes']);
+        ->whereDate('month', $currentMonth)
+        ->select(['target_hour', 'target_minutes'])
+        ->latest('updated_at')
+        ->first();
 
         // studiesテーブルに保存されている月の総勉強時間を取得する
         $totalStudyTime = Study::where('user_id', $user->id)
