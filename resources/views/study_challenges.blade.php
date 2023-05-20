@@ -104,8 +104,8 @@
 
         <div class="target-label">
             <p>今月の目標時間</p>
-            <input type="text" name="target_hour" value="{{ $monthlyGoal ? $monthlyGoal->target_hour : '' }}"><span>時間</span>
-            <input type="text" name="target_minutes" value="{{ $monthlyGoal ? $monthlyGoal->target_minutes : '' }}"><span>分</span>
+            <input type="text" name="target_hour" value="{{ $monthlyGoal ? $monthlyGoal->target_hour : '' }}" readonly><span>時間</span>
+            <input type="text" name="target_minutes" value="{{ $monthlyGoal ? $monthlyGoal->target_minutes : '' }}" readonly><span>分</span>
         </div>
     
         <div class="result">
