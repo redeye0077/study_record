@@ -43,9 +43,8 @@ class RegisteredUserController extends Controller
             'email_verified_at' => null,
         ]);
 
-        // event(new Registered($user));
-
         $user->sendEmailVerificationNotification();
+        event(new Registered($user));
 
         Auth::login($user);
 
