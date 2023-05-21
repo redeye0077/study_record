@@ -62,6 +62,11 @@
         button[type="submit"]:hover {
             background-color: #254ED8;
         }
+        p {
+            font-size: 1.0rem;
+            margin: 0.1rem;
+            padding: 0.5rem 0 0 0;
+        }
         /* メディアクエリ */
         @media (max-width: 640px) {
             .button-container {
@@ -124,6 +129,10 @@
             <button type="button" class="btn-black" onclick="location.href='/register';">
                 新規登録
             </button> 
+
+            <p><採用担当者様 専用アカウント></p>
+            <p>ログインID: admin</p>
+            <p>パスワード: admin007</p>
         </div>    
     </form>
 </body>
