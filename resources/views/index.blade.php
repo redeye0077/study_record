@@ -48,7 +48,7 @@
     </style>
 </head>
 <body>
-    <h1>Study Time</h1>
+    <h1>StudyTime</h1>
     <div class="button-container">
         <button type="button" class="btn-blue" onclick="location.href='/study_log';">
             勉強を記録する
