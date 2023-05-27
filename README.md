@@ -12,7 +12,7 @@
 
 ## ER図
 
-<img width="565" alt="ER図" src="https://github.com/redeye0077/study_record/assets/88723527/325533eb-a109-4008-957c-7b3bae98ee9b">
+<img width="565" alt="ER図" src="https://github.com/redeye0077/study_record/assets/88723527/e25934bd-d0db-4828-b2f5-1b87eddad114">
 <br>
 <br>
 
