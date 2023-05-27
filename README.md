@@ -35,10 +35,15 @@
 - Laravel 9.46.0
 - JavaScript
 
-3.データベース
+3.使用ライブラリ
+- Chart.js
+- FullCalendar
+- Laravel Breeze
+
+4.データベース
 - MySQL
 
-4.インフラ
+5.インフラ
 - さくらのVPS
 
 <br>
