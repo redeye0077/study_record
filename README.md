@@ -19,7 +19,7 @@
 
 ## インフラ構成図
 
-<img width="595" alt="インフラ構成図" src="https://github.com/redeye0077/study_record/assets/88723527/39b479aa-de50-48f9-b943-8717bb3f37d1">
+<img width="595" alt="インフラ構成図" src="https://github.com/redeye0077/study_record/assets/88723527/72d6234b-a2d1-47d4-ab0c-281cddd9b891">
 <br>
 <br>
 
@@ -103,7 +103,7 @@
 1.トップページ
 <br>
 
-<img width="1139" alt="アプリ説明" src="https://github.com/redeye0077/study_record/assets/88723527/9ca7ca51-d94a-4d0c-8030-e20750a1047e">
+<img width="1139" alt="アプリ説明" src="https://github.com/redeye0077/study_record/assets/88723527/f7a6d945-4a96-437f-a3da-e1b1e690050e">
 - アプリの使い方や説明を記載しています。
 
 <br>
@@ -112,7 +112,7 @@
 2.ユーザー認証
 <br>
 
-<img width="585" alt="ログイン画面" src="https://github.com/redeye0077/study_record/assets/88723527/bee8a371-19d6-4805-a537-ffdbfefa8fd2">
+<img width="585" alt="ログイン画面" src="https://github.com/redeye0077/study_record/assets/88723527/d894713f-db16-4221-89af-e87f01eda9f8">
 
 <br>
 
@@ -125,7 +125,7 @@
 <br>
 <br>
 
-![新規登録gif](https://github.com/redeye0077/study_record/assets/88723527/5365c568-470c-4d86-a82f-86b9111e63e7)
+![新規登録gif](https://github.com/redeye0077/study_record/assets/88723527/ab44c649-6400-4234-a73b-9b9e53416193)
 
 <br>
 <br>
@@ -149,7 +149,7 @@
 4.学習記録機能
 <br>
 
-<img width="756" alt="学習記録画面" src="https://github.com/redeye0077/study_record/assets/88723527/295ef262-8f18-4521-ba54-601157e400ed">
+<img width="756" alt="学習記録画面" src="https://github.com/redeye0077/study_record/assets/88723527/59f6ba60-fb42-4d94-a083-3cd003056ea0">
 
 <br>
 
@@ -166,7 +166,7 @@
 5.学習記録表示機能
 <br>
 
-<img width="790" alt="study_graph" src="https://github.com/redeye0077/study_record/assets/88723527/ac3bfee9-8d59-449a-9d58-977cf95d7418">
+<img width="790" alt="study_graph" src="https://github.com/redeye0077/study_record/assets/88723527/3e7678f5-9e69-489a-b3f3-f60612eb5a8c">
 
 <br>
 
@@ -180,7 +180,7 @@
 <br>
 <br>
 
-![目標gif](https://github.com/redeye0077/study_record/assets/88723527/52d9391e-ddae-4343-a6dd-fdc9a0481f1a)
+![目標gif](https://github.com/redeye0077/study_record/assets/88723527/67273943-5b1d-444c-a782-ded5aca5f577)
 
 <br>
 <br>
@@ -198,7 +198,7 @@
 7.ログインID変更機能
 <br>
 
-<img width="549" alt="ログインID変更" src="https://github.com/redeye0077/study_record/assets/88723527/aabafe47-ecda-4e0a-bfdf-c31e93c75ac5">
+<img width="549" alt="ログインID変更" src="https://github.com/redeye0077/study_record/assets/88723527/96b6aa5f-5664-4af9-93d7-6173cc2151af">
 
 <br>
 
@@ -216,7 +216,7 @@
 8.パスワード変更機能
 <br>
 
-<img width="506" alt="パスワード変更" src="https://github.com/redeye0077/study_record/assets/88723527/fd857e74-67ac-4f13-abcf-b1c9d1345b12">
+<img width="506" alt="パスワード変更" src="https://github.com/redeye0077/study_record/assets/88723527/ab3acaa8-f166-4d47-b74b-43fb1f0a9b25">
 
 <br>
 
@@ -234,7 +234,7 @@
 <br>
 <br>
 
-![退会gif](https://github.com/redeye0077/study_record/assets/88723527/830cddf3-1c31-47e1-9a51-d6e168157a82)
+![退会gif](https://github.com/redeye0077/study_record/assets/88723527/a94abf6b-9280-4b0c-9dd3-06f89df461ae)
 
 <br>
 <br>
