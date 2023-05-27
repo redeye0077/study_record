@@ -96,11 +96,20 @@
 # 何ができるのか
 
 1.トップページ
+<br>
+
 <img width="1139" alt="アプリ説明" src="https://github.com/redeye0077/study_record/assets/88723527/9ca7ca51-d94a-4d0c-8030-e20750a1047e">
 - アプリの使い方や説明を記載しています。
 
+<br>
+<br>
+
 2.ユーザー認証
+<br>
+
 <img width="585" alt="ログイン画面" src="https://github.com/redeye0077/study_record/assets/88723527/bee8a371-19d6-4805-a537-ffdbfefa8fd2">
+
+<br>
 
 - アカウント登録済みの場合はフォームにログインIDとパスワードを入力してログイン。
 <br>
@@ -108,7 +117,11 @@
 <br>
 
 3.ユーザー登録
+<br>
+<br>
+
 ![新規登録gif](https://github.com/redeye0077/study_record/assets/88723527/5365c568-470c-4d86-a82f-86b9111e63e7)
+
 <br>
 <br>
 
@@ -129,7 +142,11 @@
 
 
 4.学習記録機能
+<br>
+
 <img width="756" alt="学習記録画面" src="https://github.com/redeye0077/study_record/assets/88723527/295ef262-8f18-4521-ba54-601157e400ed">
+
+<br>
 
 - 学習時間、学習内容、学習日を入力して学習記録を作成します。
 
@@ -142,7 +159,11 @@
 <br>
 
 5.学習記録表示機能
+<br>
+
 <img width="790" alt="study_graph" src="https://github.com/redeye0077/study_record/assets/88723527/ac3bfee9-8d59-449a-9d58-977cf95d7418">
+
+<br>
 
 - 学習記録をカレンダーで表示。
 
@@ -151,6 +172,9 @@
 <br>
 
 6.月間目標機能
+<br>
+<br>
+
 ![目標gif](https://github.com/redeye0077/study_record/assets/88723527/52d9391e-ddae-4343-a6dd-fdc9a0481f1a)
 
 <br>
@@ -167,7 +191,11 @@
 <br>
 
 7.ログインID変更機能
+<br>
+
 <img width="549" alt="ログインID変更" src="https://github.com/redeye0077/study_record/assets/88723527/aabafe47-ecda-4e0a-bfdf-c31e93c75ac5">
+
+<br>
 
 - 現在のログインIDが表示されています。
 
@@ -181,7 +209,11 @@
 <br>
 
 8.パスワード変更機能
+<br>
+
 <img width="506" alt="パスワード変更" src="https://github.com/redeye0077/study_record/assets/88723527/fd857e74-67ac-4f13-abcf-b1c9d1345b12">
+
+<br>
 
 - 新しいパスワードを入力して変更します。
 
@@ -194,6 +226,9 @@
 <br>
 
 9.アカウント削除機能
+<br>
+<br>
+
 ![退会gif](https://github.com/redeye0077/study_record/assets/88723527/830cddf3-1c31-47e1-9a51-d6e168157a82)
 
 <br>
