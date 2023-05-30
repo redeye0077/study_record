@@ -8,6 +8,9 @@
 
 - URL: https://studytime0.com
 <br>
+Qiitaに詳細を執筆しております。<br>
+<a href="https://qiita.com/darts_invest/items/2f4a6aad7569a38a39ae">未経験者がLaravelでポートフォリオを作成してみた</a>
+<br>
 <br>
 
 ## ER図
