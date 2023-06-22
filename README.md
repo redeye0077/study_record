@@ -107,6 +107,7 @@ Qiitaに詳細を執筆しております。<br>
 <br>
 
 <img width="1139" alt="アプリ説明" src="https://github.com/redeye0077/study_record/assets/88723527/f7a6d945-4a96-437f-a3da-e1b1e690050e">
+
 - アプリの使い方や説明を記載しています。
 
 <br>
