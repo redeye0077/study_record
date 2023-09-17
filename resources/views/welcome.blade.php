@@ -72,7 +72,7 @@
             background-position: 50%;
             background-repeat: no-repeat;
             width: 100vw;
-            height: 80vh;
+            height: 50vh;
             position: relative;       
         }
         p {
@@ -100,6 +100,10 @@
         
         /* メディアクエリ */
     @media (max-width: 768px) {
+        .aaa {
+            height: 60vh;
+        }
+
         .features {
             flex-direction: column;
             align-items: center;

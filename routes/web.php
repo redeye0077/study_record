@@ -29,13 +29,11 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::post('/guest-login', 'App\Http\Controllers\Auth\LoginController@guestLogin')->name('guest.login');
-Route::get('/index', 'App\Http\Controllers\Auth\LoginController@index')->name('index.index');
-
+Route::post('/guest-login', 'App\Http\Controllers\Auth\AuthenticatedSessionController@guestLogin')->name('guest.login');
 
 Route::middleware(['auth'])->group(function () {
     // index画面のルート設定
-    Route::post('/index', 'App\Http\Controllers\IndexController@index')->name('index.index');
+    Route::get('/index', 'App\Http\Controllers\IndexController@index')->name('index.index');
 
     // share画面のルート設定
     Route::get('/share', 'App\Http\Controllers\ShareController@index')->name('share.index');

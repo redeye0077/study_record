@@ -21,6 +21,17 @@ class AuthenticatedSessionController extends Controller
         return view('auth.login');
     }
 
+    public function guestLogin() 
+    {
+        $guestUserId = 1;
+        $user = User::find($guestUserId);
+        if($user) {
+            Auth::login($user);
+            return redirect('/index');
+        } else {
+            return redirect('/');
+        }
+    }
 
     /**
      * Handle an incoming authentication request.
