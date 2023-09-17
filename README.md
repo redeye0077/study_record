@@ -106,7 +106,7 @@ Qiitaに詳細を執筆しております。<br>
 1.トップページ
 <br>
 
-<img width="1139" alt="アプリ説明" src="https://github.com/redeye0077/study_record/assets/88723527/f7a6d945-4a96-437f-a3da-e1b1e690050e">
+<img width="1422" alt="トップページ" src="https://github.com/redeye0077/study_record/assets/88723527/4eb8a3ee-48b7-4166-95b7-62125cd3e9cc">
 
 - アプリの使い方や説明を記載しています。
 
