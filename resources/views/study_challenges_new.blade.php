@@ -112,7 +112,7 @@
 
       <div class="button-container">
         <button type="submit" class="btn-blue">設定する</button>
-        <button type="button" class="btn-red" onclick="location.href='/study_challenges';">
+        <button type="button" class="btn-red" onclick="location.href='/index';">
           キャンセル
         </button>
       </div>

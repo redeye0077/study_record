@@ -33,6 +33,6 @@ class StudyLogController extends Controller
         $studyLog->save();
 
         ///study_logに戻る
-        return redirect('/study_log')->with('success', '学習記録が正常に保存されました！');
+        return redirect('/index')->with('success', '学習記録が正常に保存されました！');
     }
 }

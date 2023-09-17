@@ -3,9 +3,25 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @vite('resources/css/app.css')
     <title>トップ画面</title>
     <style>
+        h1 {
+            font-size: 3rem;
+            color: #329e9e;
+            margin-bottom: 0.5rem;
+        }
+        .upper-p {
+            font-size: 1.5rem;
+            color: #329e9e;
+            margin-bottom: 1rem;
+        }
+        .text-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
         body { 
             font-family: "Nunito", sans-serif;
             font-weight: 200;
@@ -15,41 +31,49 @@
             align-items: center;
             justify-content: center;
         }
-        .explanation {
-            background-color: #fff;
-            width: 50%;
-        }
         .features {
             display: flex;
             flex-wrap: wrap;
+            width : 100%;
             justify-content: center;
-            margin: 2rem;
-            padding: 1rem;
-            max-width: 1000px;
+            margin: 0.5rem;
+            padding: 0.5rem;
         }
         .feature {
-            background-color: #F0E8DF;
-            width: calc(100% / 3);
+            background-color: #F1F5F8;
+            color: #329e9e;
+            width: calc(33.33% - 1.6rem);
+            margin: 5rem 0.8rem 0.8rem 0.2rem;
             padding: 1rem;
             box-sizing: border-box;
+            flex-direction: column;
+            align-items: center;
+            display: flex;
         }
         h3 {
-            border: 3px solid orange;
-            border-radius: 10px;
             text-align: center;
             margin-top: 2rem;
             margin-bottom: 1rem;
             font-size: 2rem;
+            color: #329e9e;
         }
         h4 {
-            border: 3px solid orange;
-            border-radius: 10px;
             font-size: 1.4rem;
+            color: #329e9e;
             text-align: center;
             margin-bottom: 1rem;
         }
         img {
             object-fit: cover;
+        }
+        .aaa {
+            background-image: url("{{ asset('images/learning_photo.png') }}");
+            background-size: cover;
+            background-position: 50%;
+            background-repeat: no-repeat;
+            width: 100vw;
+            height: 50vh;
+            position: relative;       
         }
         p {
             font-size: 0.9rem;
@@ -60,6 +84,12 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            margin-bottom: 5rem;
+        }
+        .button-upper-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         button {
             width: 10rem;
@@ -70,19 +100,46 @@
         
         /* メディアクエリ */
     @media (max-width: 768px) {
+        .aaa {
+            height: 60vh;
+        }
+
+        .features {
+            flex-direction: column;
+            align-items: center;
+        }
+
         .feature {
-            width: 100%;
+            width: 80%;
         }
     }
     </style>
 </head>
 <body>
-    <div class="explanation">
-        <h3>StudyTimeとは</h3>
-        <p>学習を効果的に管理し、
-        <p>直近の学習の進捗を追跡するための便利な学習記録アプリです。</p>
-        <p>学習時間を記録することで学習の習慣化を促し、</p>
-        <p>学習のモチベーションを維持することができます。</p>
+    <div class="upper">
+        <div class="aaa">
+        <div class="absolute inset-0 flex flex-col justify-center items-center text-white bg-black bg-opacity-50">
+            <div class="text-container">
+                <h1 class="text-3xl font-bold mb-2">StudyTime</h1>
+                <p class="upper-p">学習記録アプリ</p>
+            </div>
+            <div class="button-upper-conteiner" style=
+                "display: flex;
+                justify-content: center;"
+            >
+                <button type="button" class="btn-green" onclick="location.href='/login';">
+                    ログイン
+                </button>
+                <form method="POST" action="{{ route('guest.login') }}" style="
+                    margin-top: 0.5rem;"
+                >
+                    @csrf
+                    <button type="submit" class="btn-red mt-2">
+                        ゲストログイン
+                    </button>
+                </form>
+            </div>
+        </div>
     </div>
 
     <div class="features">
@@ -121,14 +178,14 @@
             <p>確認することができます。</p>
         </div>
     </div>
-
+    <h3>さぁ、はじめよう！</h3>
     <div class="button-container">
-        <button type="button" class="btn-blue" onclick="location.href='/login';">
-            ログイン画面へ
+        <button type="button" class="btn-green" onclick="location.href='/login';">
+            ログイン
         </button>
 
         <button type="button" class="btn-black" onclick="location.href='/register';">
-            新規登録画面へ
+            新規登録
         </button> 
     </div>
 </body>
