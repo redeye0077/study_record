@@ -127,7 +127,7 @@
                 "display: flex;
                 justify-content: center;"
             >
-                <button type="button" class="btn-green" onclick="location.href='/login';">
+                <button type="button" class="btn-blue" onclick="location.href='/login';">
                     ログイン
                 </button>
                 <form method="POST" action="{{ route('guest.login') }}" style="
@@ -180,7 +180,7 @@
     </div>
     <h3>さぁ、はじめよう！</h3>
     <div class="button-container">
-        <button type="button" class="btn-green" onclick="location.href='/login';">
+        <button type="button" class="btn-blue" onclick="location.href='/login';">
             ログイン
         </button>
 
