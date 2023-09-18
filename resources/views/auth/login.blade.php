@@ -128,11 +128,7 @@
     
             <button type="button" class="btn-black" onclick="location.href='/register';">
                 新規登録
-            </button> 
-
-            <p><採用担当者様 専用アカウント></p>
-            <p>ログインID: admin</p>
-            <p>パスワード: admin007</p>
+            </button>
         </div>    
     </form>
 </body>
