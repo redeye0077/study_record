@@ -70,12 +70,14 @@
             justify-content: center;
         }
         .target-label input {
-            font-size: 1.1rem;
+            font-size: 1.5rem;
             font-weight: bold;
+            background-color: #f5f5f5;
         }
         .result input {
-            font-size: 1.1rem;
+            font-size: 1.5rem;
             font-weight: bold;
+            background-color: #f5f5f5;
         }
         span {
             font-size: 1.4rem;
