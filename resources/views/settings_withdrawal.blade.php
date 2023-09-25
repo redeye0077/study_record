@@ -48,6 +48,11 @@
 </style>
 </head>
 <body>
+  @if(session('error'))
+    <div class="alert alert-danger text-sm text-red-600 dark:text-red-400 space-y-1">
+        {{ session('error') }}
+    </div>
+  @endif
     <h1>「退会する」のボタンを押すと</h1>
     <h1>退会が完了いたします。</h1>
     <h1>本当に退会してもよろしいですか？</h1>

@@ -54,7 +54,7 @@
         <div class="alert alert-success">
             {{ session('success') }}
         </div>
-        @endif
+    @endif
 
     <form method="POST" action="{{ route('settings.login.id.update') }}" style="text-align:center;">
         @csrf

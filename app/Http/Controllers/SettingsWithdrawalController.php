@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
+use App\Http\Requests\SettingsWithdrawalRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
@@ -19,9 +19,14 @@ class SettingsWithdrawalController extends Controller
 /**
      * Delete the user's account.
      */
-    public function withdrawal(Request $request)
+    public function withdrawal(SettingsWithdrawalRequest $request)
     {
         $user = Auth::user();
+        $guestUserId = 1;
+        
+        if ($user->id === $guestUserId) {
+            return redirect()->route('settings.withdrawal.index')->with('error', 'ゲストユーザーは退会できません。');
+        }
 
         if ($user) {
             $user->studies()->delete();
@@ -30,9 +35,9 @@ class SettingsWithdrawalController extends Controller
             Auth::logout();
             $request->session()->invalidate();
             $request->session()->regenerateToken();
-            return redirect()->route('login')->with('success', '退会処理が完了しました。');
+            return redirect()->route('welcome');
         } else {
-            return redirect()->route('login')->with('error', 'ログインしていません。');
+            return redirect()->route('welcome');
         }
     }
 }
