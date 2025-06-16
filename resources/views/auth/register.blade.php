@@ -21,6 +21,15 @@
             font-size: 2rem;
             margin-bottom: 1rem;
         }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 600px;
+            padding: 2rem;
+        }
         .new {
             width: 30rem;
             height: 10rem;
@@ -55,6 +64,12 @@
         }
         .login a {
             color: #3c81f6;
+        }
+        /* メディアクエリ */
+        @media (max-width: 640px) {
+            form {
+                width: 80%;
+            }
         }
     </style>
 </head>
