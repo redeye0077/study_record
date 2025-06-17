@@ -21,7 +21,7 @@
             font-size: 2rem;
             margin-bottom: 1rem;
         }
-        form {
+        .aaa {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -70,52 +70,61 @@
             form {
                 width: 80%;
             }
+            .new {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>新規登録</h1>
-    <form method="POST" action="{{ route('register') }}">
-        @csrf
-        <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="__('ログインID')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
-        </div>
+    <div class="wrapper">
+        <h1>新規登録</h1>
+        <form method="POST" action="{{ route('register') }}">
+            @csrf
+            <!-- Name -->
+            <div>
+                <x-input-label for="name" :value="__('ログインID')" />
+                <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+                <x-input-error :messages="$errors->get('name')" class="mt-2" />
+            </div>
 
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('メールアドレス')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
+            <!-- Email Address -->
+            <div class="mt-4">
+                <x-input-label for="email" :value="__('メールアドレス')" />
+                <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+                <x-input-error :messages="$errors->get('email')" class="mt-2" />
+            </div>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('パスワード')" />
-            <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
+            <!-- Password -->
+            <div class="mt-4">
+                <x-input-label for="password" :value="__('パスワード')" />
+                <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
+                <x-input-error :messages="$errors->get('password')" class="mt-2" />
+            </div>
 
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('パスワード再入力')" />
-            <x-text-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required />
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
+            <!-- Confirm Password -->
+            <div class="mt-4">
+                <x-input-label for="password_confirmation" :value="__('パスワード再入力')" />
+                <x-text-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required />
+                <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+            </div>
 
-        <div class="new">
-            <x-primary-button class="blue-button">
-                {{ __('新規登録') }}
-            </x-primary-button>
-            <div class="login">
-                <p>アカウントをお持ちの場合 → </p>
-                <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
-                    {{ __('ログイン') }}
-                </a>
-            </div>  
-        </div>
-    </form>
+            <div class="new">
+                <x-primary-button class="blue-button">
+                    {{ __('新規登録') }}
+                </x-primary-button>
+                <div class="login">
+                    <p>アカウントをお持ちの場合 → </p>
+                    <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
+                        {{ __('ログイン') }}
+                    </a>
+                </div>  
+            </div>
+        </form>
+    </div>
 </body>
 </html> 
