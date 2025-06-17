@@ -17,11 +17,7 @@
             justify-content: center;
             height: 100vh;
         }
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-        .aaa {
+        .wrapper {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -29,6 +25,10 @@
             width: 100%;
             max-width: 600px;
             padding: 2rem;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
         }
         .new {
             width: 30rem;
