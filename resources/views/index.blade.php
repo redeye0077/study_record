@@ -110,6 +110,9 @@
         <button type="button" class="btn-blue" onclick="location.href='/study_challenges/new';">
             目標を設定する
         </button>
+        <button type="button" class="btn-blue" onclick="location.href='/chat';">
+            チャット画面
+        </button>
         <button type="button" class="btn-blue" onclick="location.href='/settings';">
             設定
         </button>

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ChatController;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,6 +65,9 @@ Route::middleware(['auth'])->group(function () {
     // settings/withdrawal画面の取得と処理
     Route::get('/settings/withdrawal', 'App\Http\Controllers\SettingsWithdrawalController@index')->name('settings.withdrawal.index');
     Route::post('/settings/withdrawal', 'App\Http\Controllers\SettingsWithdrawalController@withdrawal')->name('settings.withdrawal.post');
+
+    //メッセージ画面
+    Route::get('/chat', [ChatController::class, 'index'])->name('chat.index');
 });
 
 Route::prefix('settings')->middleware('auth')->group(function () {
