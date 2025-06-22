@@ -17,6 +17,7 @@ class ChatController extends Controller
     {
         Message::create([
             'user_id' => Auth::id(),
+            // 現在はチャットルームが1つのため、id=1で固定してます。
             'chat_room_id' => 1,
             'message' => $request->message,
         ]);
