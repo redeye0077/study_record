@@ -68,6 +68,7 @@ Route::middleware(['auth'])->group(function () {
 
     //メッセージ画面
     Route::get('/chat', [ChatController::class, 'index'])->name('chat.index');
+    Route::post('/chat', [ChatController::class, 'store'])->name('chat.store');
 });
 
 Route::prefix('settings')->middleware('auth')->group(function () {
