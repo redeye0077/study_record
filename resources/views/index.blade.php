@@ -111,7 +111,7 @@
             目標を設定する
         </button>
         <button type="button" class="btn-blue" onclick="location.href='/chat';">
-            チャット画面
+            掲示板画面
         </button>
         <button type="button" class="btn-blue" onclick="location.href='/settings';">
             設定
