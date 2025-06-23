@@ -35,10 +35,21 @@
                 {{ $messages->links('vendor.pagination.simple') }}
             </div>
         </div>
-        <form method="POST" action="{{ route('chat.store') }}">
+        @if(session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        @if ($errors->has('message'))
+            <div class="alert alert-danger">
+                {{ $errors->first('message') }}
+            </div>
+        @endif
+        <form method="POST" class="post-area" action="{{ route('chat.store') }}">
             @csrf
             <textarea class="post-textarea" name="message" autofocus></textarea>
-            <button type="submit" class="btn-blue">送信</button>
+            <button type="submit" class="btn-blue">送 信</button>
         </form>
         <button type="button" class="btn-red" onclick="location.href='/index';">
             メイン画面に戻る
