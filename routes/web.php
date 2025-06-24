@@ -57,14 +57,14 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/study_log', 'App\Http\Controllers\StudyLogController@store')->name('study.log.store');
 
     // settings画面の取得
-    Route::get('/settings', 'App\Http\Controllers\SettingsController@index')->name('settings.index');
+    Route::get('/settings', 'App\Http\Controllers\Settings\SettingsController@index')->name('settings.index');
 
     // settings/password画面の取得
-    Route::get('/settings/password', 'App\Http\Controllers\SettingsPasswordController@index')->name('settings.password.index');
+    Route::get('/settings/password', 'App\Http\Controllers\Settings\SettingsPasswordController@index')->name('settings.password.index');
 
     // settings/withdrawal画面の取得と処理
-    Route::get('/settings/withdrawal', 'App\Http\Controllers\SettingsWithdrawalController@index')->name('settings.withdrawal.index');
-    Route::post('/settings/withdrawal', 'App\Http\Controllers\SettingsWithdrawalController@withdrawal')->name('settings.withdrawal.post');
+    Route::get('/settings/withdrawal', 'App\Http\Controllers\Settings\SettingsWithdrawalController@index')->name('settings.withdrawal.index');
+    Route::post('/settings/withdrawal', 'App\Http\Controllers\Settings\SettingsWithdrawalController@withdrawal')->name('settings.withdrawal.post');
 
     //メッセージ画面
     Route::get('/chat', [ChatController::class, 'index'])->name('chat.index');
@@ -72,6 +72,6 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::prefix('settings')->middleware('auth')->group(function () {
-    Route::get('/login_id', 'App\Http\Controllers\SettingsLoginIdController@index')->name('settings.login.id');
-    Route::match(['put', 'patch'], '/login_id', 'App\Http\Controllers\SettingsLoginIdController@update')->name('settings.login.id.update');
+    Route::get('/login_id', 'App\Http\Controllers\Settings\SettingsLoginIdController@index')->name('settings.login.id');
+    Route::match(['put', 'patch'], '/login_id', 'App\Http\Controllers\Settings\SettingsLoginIdController@update')->name('settings.login.id.update');
 });
