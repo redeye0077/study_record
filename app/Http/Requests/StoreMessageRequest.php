@@ -33,4 +33,11 @@ class StoreMessageRequest extends FormRequest
             'max' => ':attributeは100文字以内で入力してください。',
         ];
     }
+
+    public function attributes()
+    {
+        return [
+            'message' => 'メッセージ',
+        ];
+    }
 }

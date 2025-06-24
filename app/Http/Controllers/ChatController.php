@@ -22,7 +22,7 @@ class ChatController extends Controller
             'message' => $request->message,
         ]);
 
-        return redirect()->route('chat.index');
+        return redirect()->route('chat.index')->with('success', 'メッセージが投稿されました！');
     }
 }
 
