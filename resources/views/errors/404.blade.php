@@ -11,8 +11,8 @@
         <h1 class="error-title">404</h1>
         <p class="error-message">ページが見つかりません。</p>
         <p class="error-subtext">お探しのページは削除されたか、URLが間違っている可能性があります。</p>
-        <a href="{{ url('/') }}" class="error-link">
-            トップページへ戻る
+        <a href="{{ url('/index') }}" class="error-link">
+            メイン画面へ戻る
         </a>
     </div>
 @endsection
