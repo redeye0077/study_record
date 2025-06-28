@@ -1,6 +1,10 @@
 @extends('layouts.app')
-<link rel="stylesheet" href="{{ asset('css/chat/chat.css') }}">
-<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+@section('title', '掲示板画面')
+
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/chat/chat.css') }}">
+@endsection
 
 @section('content')
     <div class="detail-main-wrapper">
