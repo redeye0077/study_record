@@ -1,55 +1,15 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
-    <title>退会する</title>
-    <style>
-      body {
-        background-color: #f5f5f5;
-        font-family: "Nunito", sans-serif;
-        font-weight: 200;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-      }
-      h1 {
-        text-align: center;
-        margin-top: 0;
-        margin-bottom: 1rem;
-        font-size: 2rem;
-      }
-      .button-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 1rem;
-      }
-      button {
-        width: 10rem;
-        height: 2.5rem;
-        margin: 0.5rem;
-      }
+@extends('layouts.app')
 
-      /* メディアクエリ */
-      @media (max-width: 640px) {
-        .button-container {
-            flex-direction: column;
-            align-items: center;
-        }
-        button {
-            margin-top: 0.5rem;
-        }
-      }
-</style>
-</head>
-<body>
+@section('title', '退会画面')
+
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/settings/withdrawal.css') }}">
+@endsection
+
+@section('content')
+<div class="body">
   @if(session('error'))
-    <div class="alert alert-danger text-sm text-red-600 dark:text-red-400 space-y-1">
+    <div class="alert alert-danger">
         {{ session('error') }}
     </div>
   @endif
@@ -68,5 +28,5 @@
           キャンセル
         </button>
       </div>      
-</body>
-</html>
+</div>
+@endsection
