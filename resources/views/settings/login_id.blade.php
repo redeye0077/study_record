@@ -1,61 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <title>ログインIDを変更する</title>
-    <style>
-        body {
-            background-color: #f5f5f5;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 200;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-        label {
-            font-size: 1rem;
-            text-align: center;
-        }
-        input {
-            width: 15rem;
-            height: 2rem;
-            margin: 0.5rem;
-        }
-        .alert {
-            font-size: 1.5rem;
-            padding: 0 0 1rem 0;
-        }
-        .message {
-            font-size: 1rem;
-            text-align: center;
-            padding: 1rem 0.5rem 0.5rem 0;
-        }
-        .button-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 1rem;
-        }
-        button {
-            width: 12rem;
-            height: 2.5rem;
-            margin: 0.5rem;
-        }
-    </style>
-</head>
-<body>
+@extends('layouts.app')
 
+@section('title', 'ログインID変更画面')
+
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/settings/login_id.css') }}">
+@endsection
+
+@section('content')
+<div class="body">
     @if(session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
         </div>
     @endif
-
     <form method="POST" action="{{ route('settings.login.id.update') }}" style="text-align:center;">
         @csrf
         @method('PUT')
@@ -70,7 +27,6 @@
                 </span>
             @enderror
         </div>
-
         <div class="button-container">
             <button type="submit" class="btn-blue">
                 変更する
@@ -80,5 +36,5 @@
             </button>
         </div>
     </form>
-</body>
-</html>
+</div>
+@endsection
