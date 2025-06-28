@@ -1,0 +1,120 @@
+h1 {
+    font-size: 3rem;
+    color: #329e9e;
+    margin-bottom: 0.5rem;
+}
+
+.upper-p {
+    font-size: 1.5rem;
+    color: #329e9e;
+    margin-bottom: 1rem;
+}
+        
+.text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+        
+body { 
+    font-family: "Nunito", sans-serif;
+    font-weight: 200;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+        
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    width : 100%;
+    justify-content: center;
+    margin: 0.5rem;
+    padding: 0.5rem;
+}
+        
+.feature {
+    background-color: #F1F5F8;
+    color: #329e9e;
+    width: calc(33.33% - 1.6rem);
+    margin: 5rem 0.8rem 0.8rem 0.2rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+}
+        
+h3 {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: #329e9e;
+}
+        
+h4 {
+    font-size: 1.4rem;
+    color: #329e9e;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+        
+img {
+    object-fit: cover;
+}
+        
+.header-content-box {
+    background-image: url('/images/learning_photo.png');
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 50vh;
+    position: relative;       
+}
+
+p {
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+        
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 5rem;
+}
+        
+.button-upper-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+        
+button {
+    width: 10rem;
+    height: 2.5rem;
+    padding: 0.5rem;
+    margin: 1rem;
+}
+        
+/* メディアクエリ */
+@media (max-width: 768px) {
+    .header-content-box {
+        height: 60vh;
+    }
+
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature {
+        width: 80%;
+    }
+}

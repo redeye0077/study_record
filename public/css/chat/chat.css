@@ -149,7 +149,7 @@ p.channel-description{
 
 /* ---------- メディアクエリ ---------- */
 
-@media (max-width: 720px) {
+@media (max-width: 740px) {
     p.channel-description{
         font-size: 30px;
         font-weight: bold;
