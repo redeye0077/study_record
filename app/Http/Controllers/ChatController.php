@@ -9,7 +9,9 @@ class ChatController extends Controller
 {
     public function index()
     {
-        $messages = Message::with('user')->orderBy('created_at', 'asc')->paginate(10);
+        // 1ページの表示件数
+        $messagesNumber = 10;
+        $messages = Message::with('user')->orderBy('created_at', 'asc')->paginate($messagesNumber);
         return view('chat.index', compact('messages'));
     }
 

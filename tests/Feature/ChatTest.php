@@ -8,10 +8,12 @@ use App\Models\ChatRoom;
 use App\Models\Message;
 use Database\Seeders\MessageTestSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\Utils\TestDataHelper;
 
 class ChatTest extends TestCase
 {
     use RefreshDatabase;
+    use TestDataHelper;
 
     /**
     * このテストは、ログインユーザーが100文字のメッセージを
@@ -22,14 +24,12 @@ class ChatTest extends TestCase
     */
     public function test_can_post_100_character_message() 
     {
-        // テスト用のユーザーを作成
-        /** @var \App\Models\User $user */
-        $user = User::factory()->create();
+        [$user, $room] = $this->createUserAndChatRoom();
 
-        // テスト用のチャットルームをID=1で作成
-        $room = ChatRoom::factory()->create(['id' => 1]);
+        // メッセージが入力できる最大文字数
+        $message_max_length = 100;
 
-        $message = str_repeat('あ', 100);
+        $message = str_repeat('あ', $message_max_length);
 
         // ユーザーとしてログインした状態で、チャット投稿用のPOSTリクエストを送信
         $response = $this->actingAs($user)->post('/chat', [
@@ -48,56 +48,16 @@ class ChatTest extends TestCase
     }
 
     /**
-    * このテストは、ログインユーザーが空文字のメッセージを
-    * チャットルーム（ID=1）に投稿できないことを検証します。
-    *
-    * - 正常にPOSTできないこと（HTTPステータス302を返す）
-    * - メッセージは必須です。のエラーメッセージが表示されること。
+    *　@dataProvider invalidMessageProvider
+    *　バリデーションエラーのテスト検証
     */
-    public function test_message_validation_empty_string() 
-    {   
-        // user変数にはUserのインスタンスが入る
-        /** @var \App\Models\User $user */
-        $user = User::factory()->create();
-
-        // テスト用のチャットルームをID=1で作成
-        ChatRoom::factory()->create(['id' => 1]);
-
-        //空文字でメッセージを送信
-        $response = $this->actingAs($user)->post('/chat', [
-            'message' => '',
-        ]);
-
-        $response->assertStatus(302);
-
-        // セッションにエラーメッセージが含まれていることを確認
-        $response->assertSessionHasErrors(['message']);
-
-        // 実際のエラーメッセージの中身を確認（文字列一致）
-        $errors = session('errors');
-        $this->assertTrue($errors->get('message')[0] === 'メッセージは必須です。');
-    }
-
-    /**
-    * このテストは、ログインユーザーが101文字以上ののメッセージを
-    * チャットルーム（ID=1）に投稿できないことを検証します。
-    *
-    * - 正常にPOSTできないこと（HTTPステータス302を返す）
-    * - メッセージは100文字以内で入力してください。のエラーメッセージが表示されること。
-    */
-    public function test_message_validation_max() 
+    public function test_message_validation($input, string $expectedError) 
     {
-        /** @var \App\Models\User $user */
-        $user = User::factory()->create();
-
-        // テスト用のチャットルームをID=1で作成
-        ChatRoom::factory()->create(['id' => 1]);
-
-        $message = str_repeat('あ', 101);
+        [$user, $room] = $this->createUserAndChatRoom();
         
         // ユーザーとしてログインした状態で、チャット投稿用のPOSTリクエストを送信
         $response = $this->actingAs($user)->post('/chat', [
-            'message' => $message,
+            'message' => $input,
         ]);
 
         $response->assertStatus(302);
@@ -107,37 +67,19 @@ class ChatTest extends TestCase
 
         // 実際のエラーメッセージの中身を確認
         $errors = session('errors');
-        $this->assertTrue($errors->get('message')[0] === 'メッセージは100文字以内で入力してください。');
+        $this->assertSame($expectedError, $errors->get('message')[0]);
     }
 
-    /**
-    * このテストは、ログインユーザーがnull値のメッセージを
-    * チャットルーム（ID=1）に投稿できないことを検証します。
-    *
-    * - 正常にPOSTできないこと（HTTPステータス302を返す）
-    * - メッセージは必須です。のエラーメッセージが表示されること。
-    */
-    public function test_message_validation_null() 
+    public static function invalidMessageProvider(): array
     {
-        /** @var \App\Models\User $user */
-        $user = User::factory()->create();
+        // 101文字以上は入力できないことを確かめるため101に設定
+        $message_over_length = 101;
 
-        // テスト用のチャットルームをID=1で作成
-        ChatRoom::factory()->create(['id' => 1]);
-
-        //空文字でメッセージを送信
-        $response = $this->actingAs($user)->post('/chat', [
-            'message' => null,
-        ]);
-
-        $response->assertStatus(302);
-
-        // セッションにエラーメッセージが含まれていることを確認
-        $response->assertSessionHasErrors(['message']);
-
-        // 実際のエラーメッセージの中身を確認（文字列一致）
-        $errors = session('errors');
-        $this->assertTrue($errors->get('message')[0] === 'メッセージは必須です。');
+        return [
+            '空文字はNG' => ['', 'メッセージは必須です。'],
+            'nullはNG' => [null, 'メッセージは必須です。'],
+            '101文字はNG' => [str_repeat('あ', $message_over_length), 'メッセージは100文字以内で入力してください。'],
+        ];
     }
 
     /**
@@ -150,8 +92,7 @@ class ChatTest extends TestCase
     */
     public function test_not_login_user() 
     {
-        // 投稿対象のチャットルームを作成
-        ChatRoom::factory()->create(['id' => 1]);
+        [$user, $room] = $this->createUserAndChatRoom();
 
         // 認証なしでメッセージ投稿を試みる
         $response = $this->post('/chat', [
@@ -173,11 +114,9 @@ class ChatTest extends TestCase
     */
     public function test_message_list_display() 
     {
-        // ユーザー・チャットルーム・メッセージの準備
-        /** @var \App\Models\User $user */
-        $user = User::factory()->create();
+
+        [$user, $room] = $this->createUserAndChatRoom();
         $otherUser = User::factory()->create();
-        $room = ChatRoom::factory()->create(['id' => 1]);
 
         // メッセージを2件作成（ユーザーが投稿したものと他ユーザーのもの）
         $message1 = Message::factory()->create([
@@ -212,17 +151,19 @@ class ChatTest extends TestCase
     */
     public function test_message_created_at_asc_1_page()
     {
-        // 15件のメッセージを用意（Seederで）
-        $this->seed(MessageTestSeeder::class);
-        /** @var \App\Models\User $user */
-        $user = User::factory()->create();
+        [$user, $room] = $this->createUserAndChatRoom();
+        [$firstPageStart, $firstPageEnd] = $this->getTestMessageFirstPageRange();
+
+        // Seeder を呼び出してデータを作成
+        $seeder = new \Database\Seeders\MessageTestSeeder();
+        $seeder->runWithUserAndRoom($user, $room);
 
         $response = $this->actingAs($user)->get('/chat');
 
         $response->assertStatus(200);
 
         // 表示順を確認（昇順で並んでいること）
-        $expectedMessages = collect(range(1, 10))->map(fn($i) => "テストメッセージ{$i}")->toArray();
+        $expectedMessages = collect(range($firstPageStart, $firstPageEnd))->map(fn($i) => "テストメッセージ{$i}")->toArray();
         $response->assertSeeInOrder($expectedMessages);
     }
 
@@ -235,11 +176,14 @@ class ChatTest extends TestCase
     */
     public function test_message_created_at_asc_2_page()
     {
-        // 15件のメッセージを用意（Seederで）
-        $this->seed(MessageTestSeeder::class);
+        [$user, $room] = $this->createUserAndChatRoom();
+        [$secondPageStart, $secondPageEnd] = $this->getTestMessageSecondPageRange();
 
-        /** @var \App\Models\User $user */
-        $user = User::factory()->create();
+        // Seeder を呼び出してデータを作成
+        $seeder = new \Database\Seeders\MessageTestSeeder();
+        $seeder->runWithUserAndRoom($user, $room);
+
+        $response = $this->actingAs($user)->get('/chat');
 
         // 2ページ目にアクセス（?page=2）
         $response = $this->actingAs($user)->get('/chat?page=2');
@@ -247,7 +191,7 @@ class ChatTest extends TestCase
         $response->assertStatus(200);
 
         // ページ2に表示される 11〜15 件目の順序を確認
-        $expectedMessages = collect(range(11, 15))
+        $expectedMessages = collect(range($secondPageStart, $secondPageEnd))
             ->map(fn($i) => "テストメッセージ{$i}")
             ->toArray();
 
@@ -261,11 +205,13 @@ class ChatTest extends TestCase
     */
     public function test_chat_default_page()
     {
+        [$firstPageStart, $firstPageEnd] = $this->getTestMessageFirstPageRange();
+        [$secondPageStart, $secondPageEnd] = $this->getTestMessageSecondPageRange();
+
         // 15件のメッセージを用意（Seederで）
         $this->seed(MessageTestSeeder::class);
 
-        /** @var \App\Models\User $user */
-        $user = User::factory()->create();
+        $user = User::first();
 
         // `/chat`（クエリパラメータなし）にアクセス
         $response = $this->actingAs($user)->get('/chat');
@@ -273,14 +219,14 @@ class ChatTest extends TestCase
         $response->assertStatus(200);
 
         // 表示されているのが 1〜10 のメッセージであることを確認
-        $expectedMessages = collect(range(1, 10))
+        $expectedMessages = collect(range($firstPageStart, $firstPageEnd))
             ->map(fn($i) => "テストメッセージ{$i}")
             ->toArray();
 
         $response->assertSeeInOrder($expectedMessages);
 
         // 11〜15件は含まれていないことを確認
-        foreach (range(11, 15) as $i) {
+        foreach (range($secondPageStart, $secondPageEnd) as $i) {
             $response->assertDontSee("テストメッセージ{$i}");
         }
     }
@@ -292,11 +238,13 @@ class ChatTest extends TestCase
     */
     public function test_1_page_10_messages()
     {
+        [$firstPageStart, $firstPageEnd] = $this->getTestMessageFirstPageRange();
+        [$secondPageStart, $secondPageEnd] = $this->getTestMessageSecondPageRange();
+
         // 15件のメッセージを用意（Seederで）
         $this->seed(MessageTestSeeder::class);
         
-        /** @var \App\Models\User $user */
-        $user = User::factory()->create();
+        $user = User::first();
 
         // 1ページ目にアクセス
         $response = $this->actingAs($user)->get('/chat');
@@ -304,12 +252,12 @@ class ChatTest extends TestCase
         $response->assertStatus(200);
 
         // 1〜10件目が表示されることを確認
-        foreach (range(1, 10) as $i) {
+        foreach (range($firstPageStart, $firstPageEnd) as $i) {
             $response->assertSee("テストメッセージ{$i}");
         }
 
         // 11件目以降は表示されないことを確認
-        foreach (range(11, 15) as $i) {
+        foreach (range($secondPageStart, $secondPageEnd) as $i) {
             $response->assertDontSee("テストメッセージ{$i}");
         }
     }
@@ -321,10 +269,15 @@ class ChatTest extends TestCase
     */
     public function test_page_parameter()
     {
+        // 1ページ目の2件目のメッセージを設定
+        $firstPageSecond = 2;
+        [,$firstPageEnd] = $this->getTestMessageFirstPageRange();
+        [$secondPageStart, $secondPageEnd] = $this->getTestMessageSecondPageRange();
+
         // 15件のメッセージを用意（Seederで）
-        $this->seed(MessageTestSeeder::class); 
-        /** @var \App\Models\User $user */
-        $user = User::factory()->create();
+        $this->seed(MessageTestSeeder::class);
+
+        $user = User::first();
 
         // 2ページ目にアクセス
         $response = $this->actingAs($user)->get('/chat?page=2');
@@ -332,13 +285,13 @@ class ChatTest extends TestCase
         $response->assertStatus(200);
 
         // 11〜15件目が表示されることを確認
-        foreach (range(11, 15) as $i) {
+        foreach (range($secondPageStart, $secondPageEnd) as $i) {
             $response->assertSee("テストメッセージ{$i}");
         }
 
         // 1〜10件目は表示されないことを確認
         $response->assertDontSeeText("テストメッセージ 1");
-        foreach (range(2, 10) as $i) {
+        foreach (range($firstPageSecond, $firstPageEnd) as $i) {
             $response->assertDontSee("テストメッセージ{$i}");
         }
     }

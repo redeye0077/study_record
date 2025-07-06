@@ -14,6 +14,8 @@ class MessageFactory extends Factory
 
     public function definition(): array
     {
+        // Seeder内でuser_idやmessageなど
+        // 全ての必要なフィールドを手動で明示的に渡しているので空にしています
         return [
             //
         ];

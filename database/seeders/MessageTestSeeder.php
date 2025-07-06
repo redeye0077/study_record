@@ -7,19 +7,22 @@ use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\ChatRoom;
 use App\Models\Message;
+use Tests\Utils\TestDataHelper;
 
 
 class MessageTestSeeder extends Seeder
 {
-    public function run()
+    use TestDataHelper;
+
+    public function run(): void
     {
-        $user = User::factory()->create();
+        [$user, $room] = $this->createUserAndChatRoom(); // traitの共通処理
+        $this->runWithUserAndRoom($user, $room);
+    }
 
-        // 現在はチャットルームが1つのため、id=1で固定してます。
-        $room = ChatRoom::factory()->create(['id' => 1]);
-
-        // メッセージを15件作成
-        for ($i = 1; $i < 16; $i++) {
+    public function runWithUserAndRoom(User $user, ChatRoom $room): void
+    {
+        for ($i = 1; $i <= 15; $i++) {
             Message::factory()->create([
                 'chat_room_id' => $room->id,
                 'user_id' => $user->id,
