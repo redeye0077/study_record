@@ -17,10 +17,11 @@ class ChatController extends Controller
 
     public function store(StoreMessageRequest $request)
     {
+        $chatRoomId = 1;
         Message::create([
             'user_id' => Auth::id(),
             // 現在はチャットルームが1つのため、id=1で固定してます。
-            'chat_room_id' => 1,
+            'chat_room_id' => $chatRoomId,
             'message' => $request->message,
         ]);
 
