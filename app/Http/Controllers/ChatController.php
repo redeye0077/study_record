@@ -10,17 +10,16 @@ class ChatController extends Controller
     public function index()
     {
         // 1ページの表示件数
-        $messagesNumber = 10;
+        $messagesNumber = config('chat.pagination.per_page');
         $messages = Message::with('user')->orderBy('created_at', 'asc')->paginate($messagesNumber);
         return view('chat.index', compact('messages'));
     }
 
     public function store(StoreMessageRequest $request)
     {
-        $chatRoomId = 1;
+        $chatRoomId = config('chat.room.id');
         Message::create([
             'user_id' => Auth::id(),
-            // 現在はチャットルームが1つのため、id=1で固定してます。
             'chat_room_id' => $chatRoomId,
             'message' => $request->message,
         ]);

@@ -27,7 +27,7 @@ class ChatTest extends TestCase
         [$user, $room] = $this->createUserAndChatRoom();
 
         // メッセージが入力できる最大文字数
-        $message_max_length = 100;
+        $message_max_length = config('chat.message.max_length');
 
         $message = str_repeat('あ', $message_max_length);
 
@@ -92,8 +92,6 @@ class ChatTest extends TestCase
     */
     public function test_not_login_user() 
     {
-        [$user, $room] = $this->createUserAndChatRoom();
-
         // 認証なしでメッセージ投稿を試みる
         $response = $this->post('/chat', [
             'message' => '未ログイン投稿',
@@ -152,7 +150,8 @@ class ChatTest extends TestCase
     public function test_message_created_at_asc_1_page()
     {
         [$user, $room] = $this->createUserAndChatRoom();
-        [$firstPageStart, $firstPageEnd] = $this->getTestMessageFirstPageRange();
+        $firstPageStart = config('chat.test.first_page.start');
+        $firstPageEnd = config('chat.test.first_page.end');
 
         // Seeder を呼び出してデータを作成
         $seeder = new \Database\Seeders\MessageTestSeeder();
@@ -177,7 +176,8 @@ class ChatTest extends TestCase
     public function test_message_created_at_asc_2_page()
     {
         [$user, $room] = $this->createUserAndChatRoom();
-        [$secondPageStart, $secondPageEnd] = $this->getTestMessageSecondPageRange();
+        $secondPageStart = config('chat.test.second_page.start');
+        $secondPageEnd = config('chat.test.second_page.end');
 
         // Seeder を呼び出してデータを作成
         $seeder = new \Database\Seeders\MessageTestSeeder();
@@ -205,8 +205,10 @@ class ChatTest extends TestCase
     */
     public function test_chat_default_page()
     {
-        [$firstPageStart, $firstPageEnd] = $this->getTestMessageFirstPageRange();
-        [$secondPageStart, $secondPageEnd] = $this->getTestMessageSecondPageRange();
+        $firstPageStart = config('chat.test.first_page.start');
+        $firstPageEnd = config('chat.test.first_page.end');
+        $secondPageStart = config('chat.test.second_page.start');
+        $secondPageEnd = config('chat.test.second_page.end');
 
         // 15件のメッセージを用意（Seederで）
         $this->seed(MessageTestSeeder::class);
@@ -238,8 +240,10 @@ class ChatTest extends TestCase
     */
     public function test_1_page_10_messages()
     {
-        [$firstPageStart, $firstPageEnd] = $this->getTestMessageFirstPageRange();
-        [$secondPageStart, $secondPageEnd] = $this->getTestMessageSecondPageRange();
+        $firstPageStart = config('chat.test.first_page.start');
+        $firstPageEnd = config('chat.test.first_page.end');
+        $secondPageStart = config('chat.test.second_page.start');
+        $secondPageEnd = config('chat.test.second_page.end');
 
         // 15件のメッセージを用意（Seederで）
         $this->seed(MessageTestSeeder::class);
@@ -270,9 +274,10 @@ class ChatTest extends TestCase
     public function test_page_parameter()
     {
         // 1ページ目の2件目のメッセージを設定
-        $firstPageSecond = 2;
-        [,$firstPageEnd] = $this->getTestMessageFirstPageRange();
-        [$secondPageStart, $secondPageEnd] = $this->getTestMessageSecondPageRange();
+        $firstPageSecond = config('chat.test.first_page.second');
+        $firstPageEnd = config('chat.test.first_page.end');
+        $secondPageStart = config('chat.test.second_page.start');
+        $secondPageEnd = config('chat.test.second_page.end');
 
         // 15件のメッセージを用意（Seederで）
         $this->seed(MessageTestSeeder::class);

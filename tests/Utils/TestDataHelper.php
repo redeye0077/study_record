@@ -10,19 +10,8 @@ trait TestDataHelper
     public function createUserAndChatRoom(): array
     {
         $user = User::factory()->create();
-        // 部屋番号を1に固定
-        $room_id = 1;
+        $room_id = config('chat.room.id');
         $room = ChatRoom::factory()->create(['id' => $room_id]);
         return [$user, $room];
-    }
-
-    public function getTestMessageFirstPageRange(): array
-    {
-        return [1, 10]; // 1〜10件目を返す
-    }
-
-    public function getTestMessageSecondPageRange(): array
-    {
-        return [11, 15]; // 11〜15件目を返す
     }
 }
