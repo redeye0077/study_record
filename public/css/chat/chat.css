@@ -1,0 +1,228 @@
+.detail-main-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+p.channel-description{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.messages-area{
+    background-color: white;
+    border: 1.5px solid black;
+    border-radius: 10px;
+    width: 70%;
+    max-width:  900px;
+    min-width: auto;
+    height: 640px;
+    overflow: scroll;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.messages-wrapper {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem 0;
+}
+
+/* ----------- 自分のメッセージ --------- */
+
+.my-message {
+    text-align: right;
+}
+
+.my-message_message {
+    background-color: #33FF99;
+    display: inline-block;
+    padding: 1rem;
+    border-radius: 20px;
+    max-width: 560px;
+}
+
+/* ---------- 他者のメッセージ ---------- */
+
+.other-message {
+    text-align: left;
+}
+
+.other-message_message {
+    background-color: #CCFFFF;
+    display: inline-block;
+    padding: 1rem;
+    border-radius: 20px;
+    max-width: 560px;
+}
+
+/* ---------- ページネーション ---------- */
+
+.pagination-wrapper {
+    text-align: center;
+}
+
+.pagination-default {
+    display: block;
+}
+.pagination-simple {
+    display: none;
+}
+
+.pagination {
+    display: inline-flex;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pagination .page-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #f0f0f0;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.pagination .page-link:hover {
+    background-color: #e0f7fa;
+    color: #007b8a;
+}
+
+.alert-success {
+    font-size: 1.25rem;
+}
+
+.alert-danger {
+    font-size: 1.25rem;
+    color: #dc2626;
+}
+
+/* ----------- post-area ----------- */
+
+.post-area {
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+    gap: 2rem;
+    margin: 1rem 0 0 0;
+}
+
+.post-textarea {
+    resize: none;   
+    width: 80%;
+    padding: 1rem;
+    min-height: 100px;
+    border-radius: 4px
+}
+
+.btn-blue {
+    display: inline-block;
+    border: none;
+    padding: 0.5rem;
+    min-width: 130px;
+    height: 50px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-red {
+    margin-bottom: 2rem;
+    min-width: 300px;
+    min-height: 50px;
+}
+
+/* ---------- メディアクエリ ---------- */
+
+@media (max-width: 740px) {
+    p.channel-description{
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    .messages-area {
+        width: 70%;
+        height: 640px;
+        padding: 0.5rem;
+    }
+
+    .my-message_message,
+    .other-message_message {
+        font-size: 0.95rem;
+        padding: 0.8rem;
+    }
+
+    .channel-description {
+        font-size: 1.2rem;
+    }
+
+/* ---------- ページネーション ---------- */
+
+    .pagination-default {
+        display: none;
+    }
+
+    .pagination-simple {
+        display: block;
+        text-align: center;
+    }
+
+    .simple-pagination {
+        display: inline-flex;
+        gap: 1rem;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .simple-pagination .page-link {
+        font-size: 1.1rem;
+        padding: 0.4rem 0.8rem;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        background-color: #f0f0f0;
+    }
+
+    .simple-pagination .page-item.disabled .page-link {
+        color: #aaa;
+        background-color: #f9f9f9;
+    }
+
+    .simple-pagination .page-item.active .page-link {
+        background-color: #f0f0f0;
+        color: black;
+        font-weight: bold;
+    }
+/* ----------- post-area ----------- */
+
+    .post-area {
+        flex-direction: column;
+        width: 90%;
+        min-width: unset;
+    }
+
+    .btn-blue {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .btn-red {
+        width: 100%;
+        max-width: 300px;
+    }
+}

@@ -1,62 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <title>パスワードを変更する</title>
-    <style>
-        body {
-            background-color: #f5f5f5;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 200;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-        p { 
-            font-size: 1.5rem;
-            text-align: center;
-        }
-        .button-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 1rem;
-        }
-        button {
-            width: 15rem;
-            height: 2.5rem;
-            margin: 0.5rem;
-        }
-        button[type="submit"] {
-        background-color: #3c81f6;
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.0rem;
-        }
-        button[type="submit"]:hover {
-        background-color: #254ED8;
-        }
+@extends('layouts.app')
 
-        /* メディアクエリ */
-        @media (max-width: 640px) {
-            .button-container {
-                flex-direction: column;
-                align-items: center;
-            }
-            button {
-                margin-top: 0.5rem;
-            }
-        }
-    </style>
-</head>
-<body>
+@section('title', 'パスワード変更画面')
+
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/settings/password.css') }}">
+@endsection
+
+@section('content')
+<div class="body">
 <form method="post" action="{{ route('password.update') }}" class="mt-6 space-y-6">
     @csrf
     @method('put')
@@ -93,5 +44,5 @@
 <button type="button" class="btn-red" onclick="location.href='/settings';">
     キャンセル
 </button>
-</body>
-</html>
+</div>
+@endsection
