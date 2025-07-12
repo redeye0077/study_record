@@ -22,7 +22,7 @@ Qiitaに詳細を執筆しております。<br>
 
 ## インフラ構成図
 
-<img width="595" alt="インフラ構成図" src="https://github.com/redeye0077/study_record/assets/88723527/72d6234b-a2d1-47d4-ab0c-281cddd9b891">
+<img width="1032" alt="インフラ構成図" src="https://github.com/user-attachments/assets/95956f74-87db-4e36-822f-ff50d6c0c152">
 <br>
 <br>
 
