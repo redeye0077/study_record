@@ -31,7 +31,6 @@ Qiitaに詳細を執筆しております。<br>
 1.フロントエンド
 - HTML
 - CSS
-- Tailwind CSS
 
 2.バックエンド
 - PHP 8.4.6
