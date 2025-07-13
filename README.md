@@ -6,16 +6,16 @@
 
 ## URL
 
-- URL: https://studytime0.com
+- URL: https://studyrecord.net
 <br>
 Qiitaに詳細を執筆しております。<br>
-<a href="https://qiita.com/darts_invest/items/2f4a6aad7569a38a39ae">未経験者がLaravelでポートフォリオを作成してみた</a>
+<a href="https://qiita.com/sapphire_19/items/2f4a6aad7569a38a39ae">未経験者がLaravelでポートフォリオを作成してみた</a>
 <br>
 <br>
 
 ## ER図
 
-<img width="565" alt="ER図" src="https://github.com/redeye0077/study_record/assets/88723527/e25934bd-d0db-4828-b2f5-1b87eddad114">
+<img width="1378" height="1068" alt="Image" src="https://github.com/user-attachments/assets/54eef969-1f9b-4ac4-bff0-d234859e8a18">
 <br>
 <br>
 
@@ -34,8 +34,8 @@ Qiitaに詳細を執筆しております。<br>
 - Tailwind CSS
 
 2.バックエンド
-- PHP 8.1.18
-- Laravel 9.46.0
+- PHP 8.4.6
+- Laravel 11.44.7
 - JavaScript
 
 3.使用ライブラリ
@@ -47,7 +47,8 @@ Qiitaに詳細を執筆しております。<br>
 - MySQL
 
 5.インフラ
-- さくらのVPS
+- AWS(VPC / EC2 / Route53 / RDS)
+- Let's Encrypt
 
 <br>
 <br>
@@ -87,12 +88,16 @@ Qiitaに詳細を執筆しております。<br>
         <td>7</td>
         <td>月間目標機能</td>
     </tr>
-    <tr>
+     <tr>
         <td>8</td>
-        <td>ログインID変更機能</td>
+        <td>掲示板機能</td>
     </tr>
     <tr>
         <td>9</td>
+        <td>ログインID変更機能</td>
+    </tr>
+    <tr>
+        <td>10</td>
         <td>パスワード変更機能</td>
     </tr>
 </table>
@@ -199,7 +204,38 @@ Qiitaに詳細を執筆しております。<br>
 <br>
 <br>
 
-7.ログインID変更機能
+7.掲示板機能
+<br>
+
+<img width="500" height="565" alt="Image" src="https://github.com/user-attachments/assets/e2016f6e-7979-4fa9-b5f7-d234f00511f6">
+
+<br>
+
+- ユーザーが自由にメッセージを投稿し、時系列で古い順番から一覧表示される形で閲覧できます。
+
+- メッセージ投稿
+    - フォームから投稿内容を入力して送信可能
+    - 最大100文字までのバリデーションあり
+    - 投稿後は即時リストに反映
+
+<br>
+
+- メッセージ一覧表示
+    - 各投稿には「投稿日時」「ユーザー名」「内容」が表示されます
+    - 投稿者ごとに吹き出しの色分けを行っており、視認性を高めています。
+        - 自分の投稿：グリーン系
+        - 他ユーザーの投稿：ブルー系
+
+<br>
+
+- メッセージ一覧表示
+    - 投稿は10件ごとに分割して表示
+    - 下部にページナビゲーションがあり、過去ログも容易に閲覧可能
+
+<br>
+<br>
+
+8.ログインID変更機能
 <br>
 
 <img width="549" alt="ログインID変更" src="https://github.com/redeye0077/study_record/assets/88723527/96b6aa5f-5664-4af9-93d7-6173cc2151af">
@@ -217,7 +253,7 @@ Qiitaに詳細を執筆しております。<br>
 <br>
 <br>
 
-8.パスワード変更機能
+9.パスワード変更機能
 <br>
 
 <img width="506" alt="パスワード変更" src="https://github.com/redeye0077/study_record/assets/88723527/ab3acaa8-f166-4d47-b74b-43fb1f0a9b25">
@@ -234,7 +270,7 @@ Qiitaに詳細を執筆しております。<br>
 <br>
 <br>
 
-9.アカウント削除機能
+10.アカウント削除機能
 <br>
 <br>
 
