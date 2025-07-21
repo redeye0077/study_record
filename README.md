@@ -9,7 +9,7 @@
 - URL: https://studyrecord.net
 <br>
 Qiitaに詳細を執筆しております。<br>
-<a href="https://qiita.com/sapphire_19/items/2f4a6aad7569a38a39ae">未経験者がLaravelでポートフォリオを作成してみた</a>
+<a href="https://qiita.com/sapphire_19/items/2f4a6aad7569a38a39ae">【Laravel 11 / AWS対応】2年前に作った学習記録アプリをリニューアルした話</a>
 <br>
 <br>
 
