@@ -79,6 +79,7 @@
             <img src="/images/study_log.png" alt="StudyRecord" class="log-img" width="250" height="30">
         </div>
         <div class="feature-block">
+            <img src="/images/study_graph.png" alt="StudyRecord" class="log-img" width="250" height="30">
             <div class="feature-text">
                 <h4>学習記録の表示</h4>
                 <p>学習時間をグラフで視覚化して</p>
@@ -87,7 +88,6 @@
                 <p>それ以上の日数がある場合は、最新の7日分の
                 <p>データのみを取得して表示します。</p>
             </div>
-            <img src="/images/study_graph.png" alt="StudyRecord" class="log-img" width="250" height="30">
         </div>
         <div class="feature-block">
             <div class="feature-text">
