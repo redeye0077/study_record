@@ -298,3 +298,10 @@ Qiitaに詳細を執筆しております。<br>
 <br>
 
 - 退会するボタンを押すとアカウントを削除することができます。
+
+<br>
+<br>
+
+## 環境構築
+以下のリンクにローカル環境構築するためのドキュメントを載せております。
+https://docs.google.com/document/d/13Y_qv-oqhMMMmMtkRKj7WLO7voaeOqVQ7I1mtUteXxQ/edit?usp=sharing
