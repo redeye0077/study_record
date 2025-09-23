@@ -65,7 +65,7 @@
             <h2>学習の進捗を追跡するための</h2>
             <h2>学習記録アプリ</h2>
         </div>
-        <img src="/images/studyrecord_top.png" alt="StudyRecord" class="top-img" width="250" height="30">
+        <img src="/images/studyrecord_top.png" alt="StudyRecord" class="top-img" width="280" height="30">
     </div>
     <div class="feature">
         <div class="feature-block">
@@ -76,10 +76,10 @@
                 <p>学習時間を記録することで学習の習慣化を促し、</p>
                 <p>学習のモチベーションを維持することができます。</p>
             </div>
-            <img src="/images/study_log.png" alt="StudyRecord" class="log-img" width="250" height="30">
+            <img src="/images/study_log.png" alt="StudyRecord" class="log-img" width="280" height="60">
         </div>
         <div class="feature-block">
-            <img src="/images/study_graph.png" alt="StudyRecord" class="log-img" width="250" height="30">
+            <img src="/images/study_graph.png" alt="StudyRecord" class="log-img" width="280" height="60">
             <div class="feature-text">
                 <h4>学習記録の表示</h4>
                 <p>学習時間をグラフで視覚化して</p>
@@ -96,7 +96,7 @@
                 <p>学習目標時間と学習結果時間を比較することで、</p>
                 <p>目標の達成度を確認することができます。</p>
             </div>
-            <img src="/images/target.png" alt="StudyRecord" class="log-img" width="250" height="30">
+            <img src="/images/target.png" alt="StudyRecord" class="log-img" width="280" height="60">
         </div>
     </div>
 </div>
