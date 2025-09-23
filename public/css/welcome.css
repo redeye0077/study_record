@@ -1,80 +1,111 @@
-h1 {
-    font-size: 3rem;
-    color: #329e9e;
-    margin-bottom: 0.5rem;
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    height: 100px;
+    background-color: #F3F4F6;
+    border-bottom: 1px solid #b3b3b3;
 }
 
-.upper-p {
-    font-size: 1.5rem;
-    color: #329e9e;
-    margin-bottom: 1rem;
+.logo-img {
+    margin-left: 10px;
 }
-        
-.text-container {
+
+.header-button {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-        
-body { 
-    font-family: "Nunito", sans-serif;
-    font-weight: 200;
+    gap: 1rem;
     margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.btn-guest {
+    background-color: #FFA500;
+    color: #FFFFFF;
+    border-radius:30px;
+}
+
+.btn-login {
+    background-color: #207ED6;
+    color: #FFFFFF;
+    border-radius:30px;
+}
+
+.mobile-menu {
+    background: #f9fafb;
+    padding: 1rem;
+}
+
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.mobile-menu.hidden {
+    display: none;
+}
+        
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #F3F4F6;
+}
+
+.main {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
+    margin-bottom: 4rem;
+    gap: 1rem;
+}
+
+.main-text {
+    text-align: center;
+}
+
+.main-text h1{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.main-text h2{
+    font-size: 20px;
 }
         
 .features {
-    display: flex;
-    flex-wrap: wrap;
     width : 100%;
-    justify-content: center;
-    margin: 0.5rem;
-    padding: 0.5rem;
+    padding: 5rem 8rem;
 }
-        
+
 .feature {
-    background-color: #F1F5F8;
-    color: #329e9e;
-    width: calc(33.33% - 1.6rem);
-    margin: 5rem 0.8rem 0.8rem 0.2rem;
-    padding: 1rem;
-    box-sizing: border-box;
-    flex-direction: column;
-    align-items: center;
     display: flex;
+    flex-direction: column;
+    margin: 5rem;
+    gap: 2rem;
 }
-        
-h3 {
-    text-align: center;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    font-size: 2rem;
-    color: #329e9e;
+
+.feature-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
 }
-        
-h4 {
-    font-size: 1.4rem;
-    color: #329e9e;
-    text-align: center;
-    margin-bottom: 1rem;
+
+.feature-text h4 {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: left;
 }
-        
-img {
-    object-fit: cover;
-}
-        
-.header-content-box {
-    background-image: url('/images/learning_photo.png');
-    background-size: cover;
-    background-position: 50%;
-    background-repeat: no-repeat;
-    width: 100vw;
-    height: 50vh;
-    position: relative;       
+
+.feature-text p {
+    text-align: left;
+    font-weight: bold;
 }
 
 p {
@@ -83,38 +114,71 @@ p {
     margin-top: 1rem;
 }
         
-.button-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 5rem;
-}
-        
-.button-upper-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-        
 button {
-    width: 10rem;
-    height: 2.5rem;
-    padding: 0.5rem;
+    width: 8.5rem;
+    height: 2rem;
     margin: 1rem;
+}
+
+footer p{
+    background-color: #C6C7C8;
+    text-align: center;
+    margin: 0;
+    padding: 1rem 0;
 }
         
 /* メディアクエリ */
+@media (max-width: 1024px) {
+    .features {
+        width : 100%;
+        padding: 5rem;
+    }
+
+    .pc-menu {
+        display: none;
+    }
+
+    .sm-menu{
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .mobile-menu{
+        text-align: center;
+        background-color: #F3F4F6;
+        border-bottom: solid #b3b3b3;
+    }
+
+    .hamburger {
+        display: block;
+        font-size: 2rem;
+        line-height: 1;
+    }
+
+    .site-header.no-border {
+        border-bottom: none;
+    }
+}
+
 @media (max-width: 768px) {
-    .header-content-box {
-        height: 60vh;
+    .main{
+        flex-direction: column;
     }
 
     .features {
-        flex-direction: column;
-        align-items: center;
+        width : 100%;
+        padding: 5rem;
     }
 
-    .feature {
-        width: 80%;
+    .feature-block {
+        flex-direction: column;
+    }
+
+    .feature-block .feature-text {
+        order: 1;
+    }
+
+    .feature-block .log-img {
+        order: 2;
     }
 }
