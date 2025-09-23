@@ -129,9 +129,13 @@ footer p{
         
 /* メディアクエリ */
 @media (max-width: 1024px) {
+    .main {
+        gap: 2rem;
+    }
+
     .features {
         width : 100%;
-        padding: 5rem;
+        padding: 3rem;
     }
 
     .pc-menu {
@@ -165,10 +169,19 @@ footer p{
         flex-direction: column;
     }
 
-    .features {
-        width : 100%;
-        padding: 1rem;
+    .main-text h1 {
+        padding-top: 2rem;
     }
+
+    .features {
+        padding: 0;
+    }
+
+    .feature-text h4 {
+        font-size: 28px;
+        font-weight: bold;
+        text-align: center;
+    }    
 
     .feature-block {
         flex-direction: column;
