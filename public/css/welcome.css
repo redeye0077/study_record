@@ -126,6 +126,22 @@ footer p{
     margin: 0;
     padding: 1rem 0;
 }
+
+/* ダークモードのデザイン */
+@media (prefers-color-scheme: dark) {
+    .hamburger {
+        color: black;
+    }
+    
+    .features {
+        background-color: #12191F;
+        color: white;
+    }
+
+    footer p {
+        color: black;
+    }
+}
         
 /* メディアクエリ */
 @media (max-width: 1024px) {
