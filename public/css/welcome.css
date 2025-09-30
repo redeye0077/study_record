@@ -136,6 +136,7 @@ footer p{
     .features {
         background-color: #0F2350;
         color: white;
+        display: flow-root;
     }
 
     footer p {
