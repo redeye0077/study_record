@@ -22,6 +22,12 @@ class IndexController extends Controller
         ->latest('updated_at')
         ->first();
 
+        // 目標時間の合計
+        $targetHours = 0;
+        if ($monthlyGoal) {
+            $targetHours = ($monthlyGoal->target_hour * 60) + $monthlyGoal->target_minutes;
+        }
+
         // studiesテーブルに保存されている月の総勉強時間を取得する
         $totalStudyTime = Study::where('user_id', $user->id)
         ->where('date', 'like', Carbon::now()->format('Y-m') . '%')
@@ -30,7 +36,17 @@ class IndexController extends Controller
         // 総勉強時間を時と分に分解する
         $resultHour = floor($totalStudyTime / 60);
         $resultMinutes = $totalStudyTime % 60;
-        
+
+        // 達成率
+        $achievementRate = 0;
+
+        if ($targetHours > 0) {
+            $achievementRate = round(($totalStudyTime / $targetHours) * 100);
+        }
+
+        // 達成率(バー表示用)
+        $rate = $achievementRate;
+        $progressRate = min(max($rate, 0), 100);
         
         // studiesテーブルから日付と学習時間を取得
         $studies = DB::table('studies')
@@ -79,6 +95,6 @@ class IndexController extends Controller
         $data = json_encode($data);
 
         //ビューに渡す
-        return view('index', compact('dates', 'subjects', 'data', 'monthlyGoal', 'resultHour', 'resultMinutes'));
+        return view('index', compact('dates', 'subjects', 'data', 'monthlyGoal', 'targetHours', 'resultHour', 'resultMinutes', 'achievementRate', 'progressRate'));
     }
 }
