@@ -14,7 +14,10 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
         {{-- 外部ライブラリ --}}
+        <!-- Chart.js（CDN） -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <!-- 進捗バー用JS -->
+        <script src="{{ asset('js/monthly_progress_bar.js') }}"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
         <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
         <script src="https://npmcdn.com/flatpickr/dist/l10n/ja.js"></script>
