@@ -1,5 +1,5 @@
 .chart-wrapper {
-    background-color: #f5f5f5;
+    background-color: #F3F4F6;
     font-family: 'Nunito', sans-serif;
     font-weight: 200;
     margin: 0;
@@ -25,6 +25,12 @@ button {
 
 #myChart {
     justify-content: center;
+}
+
+@media (prefers-color-scheme: dark) {
+    .chart-wrapper {
+        background-color: #0F2350;
+    }
 }
 
 /* メディアクエリ */

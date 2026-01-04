@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-<body>
+<div class="body-wrapper">
   <div class="container">
     <form method="POST" action="{{ route('study.log.store') }}">
       @csrf
@@ -80,5 +80,5 @@
       clickOpens: true,
     });
   </script>
-</body>
+</div>
 @endsection

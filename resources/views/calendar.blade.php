@@ -17,13 +17,13 @@
     <button type="button" class="btn-red" onclick="location.href='/index';">
         メイン画面に戻る
     </button>
+
+    <script>
+        const chartDates = JSON.parse(`{!! $dates !!}`);
+        const chartSubjects = JSON.parse(`{!! $subjects !!}`);
+        const chartData = JSON.parse(`{!! $data !!}`);
+    </script>
+
+    <script src="{{ asset('js/chart.js') }}"></script>
 </div>
-
-<script>
-    const chartDates = JSON.parse(`{!! $dates !!}`);
-    const chartSubjects = JSON.parse(`{!! $subjects !!}`);
-    const chartData = JSON.parse(`{!! $data !!}`);
-</script>
-
-<script src="{{ asset('js/chart.js') }}"></script>
 @endsection

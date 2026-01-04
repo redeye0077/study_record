@@ -1,4 +1,5 @@
 .detail-main-wrapper {
+    background-color: #F3F4F6;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -145,6 +146,12 @@ p.channel-description{
     margin-bottom: 2rem;
     min-width: 300px;
     min-height: 50px;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #0F2350;
+    }
 }
 
 /* ---------- メディアクエリ ---------- */

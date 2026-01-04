@@ -35,3 +35,9 @@
 .error-link:hover {
     color: #1e40af;
 }
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #0F2350;
+    }
+}
