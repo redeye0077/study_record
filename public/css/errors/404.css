@@ -40,4 +40,16 @@
     body {
         background-color: #0F2350;
     }
+
+    .error-message, .error-subtext {
+        color: white;
+    }
+
+    .error-link {
+        color: #3B82F6;
+    }
+
+    .error-link:hover {
+        color: #2563eb;
+    } 
 }

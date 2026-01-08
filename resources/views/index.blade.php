@@ -40,6 +40,11 @@
 </div>
 <div class="body-wrapper">
     <div class="screen">
+        @if(session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
         <h1>StudyTime</h1>
         <div class="button-container">
             <button type="button" class="tile-button" onclick="location.href='/study_log';">
@@ -65,12 +70,6 @@
         </div>
 
         <div class="container">
-            @if(session('success'))
-                <div class="alert alert-success">
-                    {{ session('success') }}
-                </div>
-            @endif
-
             <div class="target-label">
                 <p>今月の目標時間</p>
                 <input type="text" name="target_hour" value="{{ $monthlyGoal ? $monthlyGoal->target_hour : '' }}" readonly><span>時間</span>
