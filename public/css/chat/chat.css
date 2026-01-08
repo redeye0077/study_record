@@ -1,4 +1,56 @@
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    height: 100px;
+    background-color: #F3F4F6;
+    border-bottom: 1px solid #b3b3b3;
+}
+
+.logo-img {
+    margin-left: 10px;
+}
+
+.header-button {
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.btn-logout {
+    width: 8.5rem;
+    height: 2rem;
+    margin: 1rem;
+}
+
+.btn-logout {
+    background-color: #FFA500;
+    color: #FFFFFF;
+    border-radius:30px;
+}
+
+.mobile-menu {
+    background: #f9fafb;
+    padding: 1rem;
+}
+
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.mobile-menu.hidden {
+    display: none;
+}
+
 .detail-main-wrapper {
+    background-color: #F3F4F6;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -107,7 +159,7 @@ p.channel-description{
 }
 
 .alert-danger {
-    font-size: 1.25rem;
+    font-size: 1rem;
     color: #dc2626;
 }
 
@@ -141,13 +193,83 @@ p.channel-description{
     align-items: center;
 }
 
-.btn-red {
+.submit-button {
+    background-color: #3B82F6;
+    color: white;
+    font-weight: bold;
+    min-width: 200px;
+    height: 50px;
+    border-radius: 30px;
+}
+
+.main-button {
+    background-color: #059795;
+    color: white;
+    font-weight: bold;
     margin-bottom: 2rem;
-    min-width: 300px;
+    min-width: 200px;
     min-height: 50px;
+    border-radius: 30px;
+}
+
+footer p{
+    background-color: #C6C7C8;
+    text-align: center;
+    margin: 0;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #0F2350;
+    }
+
+    .detail-main-wrapper {
+        background-color: #0F2350;
+    }
+
+    .channel-description {
+        color: white;
+    }
+
+    .alert-success {
+        color: white;
+    }
+
+    .alert-danger {
+        color: #f87171;
+    }
 }
 
 /* ---------- メディアクエリ ---------- */
+@media (max-width: 1024px) {
+    .pc-menu {
+        display: none;
+    }
+
+    .sm-menu{
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .mobile-menu{
+        text-align: center;
+        background-color: #F3F4F6;
+        border-bottom: solid #b3b3b3;
+    }
+
+    .hamburger {
+        display: block;
+        font-size: 2rem;
+        margin-right: 4rem;
+        line-height: 1;
+    }
+
+    .site-header.no-border {
+        border-bottom: none;
+    }
+}
 
 @media (max-width: 740px) {
     p.channel-description{

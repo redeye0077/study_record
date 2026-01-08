@@ -1,0 +1,92 @@
+.verify-email-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.verify-email-card {
+    text-align: center;
+    max-width: 32rem;
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+
+.verify-email-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+.verify-email-text {
+    color: #4b5563;
+    line-height: 1.625;
+    margin-bottom: 1.5rem;
+}
+
+.verify-email-status {
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    color: #16a34a;
+}
+
+.verify-email-actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.verify-email-logout {
+  text-decoration: underline;
+  font-size: 0.875rem;
+  color: #4b5563;
+}
+
+.verify-email-logout:hover {
+  color: #111827;
+}
+
+@media (prefers-color-scheme: dark) {
+    .verify-email-wrapper {
+        background-color: #0F2350;
+    }
+
+    .verify-email-title {
+        color: white;
+    }
+
+    .verify-email-text {
+        color: white;
+    }
+
+    .verify-email-status {
+        color: #4ade80;
+    }
+
+    .verify-email-resend {
+        background-color: #059795;
+        color: white;
+        font-weight: bold;
+        border-radius:20px;
+    }
+
+    .verify-email-logout {
+        color: #e5e7eb;
+    }
+
+    .verify-email-logout:hover {
+        color: #ffffff;
+    }
+}
+
+/* メディアクエリ */
+@media (min-width: 640px) {
+    .verify-email-actions {
+        flex-direction: row;
+    }
+}
