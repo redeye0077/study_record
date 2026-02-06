@@ -86,6 +86,18 @@
                 {{ $achievementRate }}% 達成
             </span>
 
+            <div class="prediction">
+                @if ($status === 'no_goal')
+                    <p>月間目標が未設定です。</p>
+                @elseif ($status === 'done')
+                    <p>目標達成しました！</p>
+                @elseif ($status === 'good')
+                    <p>このペースなら順調です。</p>
+                @else
+                    <p>このペースだと厳しそうです。</p>
+                @endif
+            </div>
+
             <div class="achievement-bar">
                 <canvas
                     id="monthlyProgressBar"
