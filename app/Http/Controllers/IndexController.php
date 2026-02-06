@@ -94,7 +94,34 @@ class IndexController extends Controller
         $subjects = json_encode($subjects);
         $data = json_encode($data);
 
+        // 進捗機能の判定
+        $actual = $totalStudyTime;
+        $goal   = $targetHours;
+        $today = now();
+        $elapsedDays = $today->day;
+        $pace = 0;
+        $projected = 0;
+        // 総日数
+        $totalDaysInMonth = $today->daysInMonth;
+
+        if ($goal <= 0) {
+            $status = 'no_goal';
+        } elseif ($actual >= $goal) {
+            $status = 'done';
+        } else {
+            // 平均学習時間
+            $pace = $elapsedDays > 0 ? $actual / $elapsedDays : 0;
+            // 月学習時間の予測
+            $projected = $pace * $totalDaysInMonth;
+
+            if ($projected >= $goal) {
+                $status = 'good';
+            } else {
+                $status = 'hard';
+            }
+        }
+
         //ビューに渡す
-        return view('index', compact('dates', 'subjects', 'data', 'monthlyGoal', 'targetHours', 'resultHour', 'resultMinutes', 'achievementRate', 'progressRate'));
+        return view('index', compact('dates', 'subjects', 'data', 'monthlyGoal', 'targetHours', 'resultHour', 'resultMinutes', 'achievementRate', 'progressRate', 'status', 'actual', 'goal', 'pace', 'projected'));
     }
 }
