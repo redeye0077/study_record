@@ -59,15 +59,15 @@
   </ul>
 </div>
 <div class="features">
-    <div class=main>
-        <div class=main-text>
-            <h1>StudyRecord</h1>
-            <h2>学習の進捗を追跡するための</h2>
-            <h2>学習記録アプリ</h2>
-        </div>
-        <img src="/images/studyrecord_top.png" alt="StudyRecord" class="top-img" width="280" height="30">
-    </div>
     <div class="feature">
+        <div class=main>
+            <div class=main-text>
+                <h1>StudyRecord</h1>
+                <h2>学習の進捗を追跡するための</h2>
+                <h2>学習記録アプリ</h2>
+            </div>
+            <img src="/images/studyrecord_top.png" alt="StudyRecord" class="top-img" width="280" height="30">
+        </div>
         <div class="feature-block">
             <div class="feature-text">
                 <h4>学習記録機能</h4>
