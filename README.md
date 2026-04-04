@@ -25,7 +25,7 @@ Qiitaに詳細を執筆しております。<br>
 
 ## ER図
 
-<img width="1378" height="1068" alt="Image" src="https://github.com/user-attachments/assets/54eef969-1f9b-4ac4-bff0-d234859e8a18">
+<img width="1378" height="1068" alt="Image" src="https://github.com/user-attachments/assets/e35dd476-f7d3-4108-80ea-0c16b4a8c80c">
 <br>
 <br>
 
