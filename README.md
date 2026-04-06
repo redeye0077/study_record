@@ -142,7 +142,7 @@ Qiitaに詳細を執筆しております。<br>
 <br>
 <br>
 
-![Image](https://github.com/user-attachments/assets/85254b8e-b7a1-4d7d-8d40-79a64ef2375d)
+<img width="558" alt="Image" src="https://github.com/user-attachments/assets/8b09f294-6e4b-4b6a-9860-12259d6f9121">
 
 <br>
 <br>
@@ -197,7 +197,7 @@ Qiitaに詳細を執筆しております。<br>
 <br>
 <br>
 
-![目標gif](https://github.com/redeye0077/study_record/assets/88723527/67273943-5b1d-444c-a782-ded5aca5f577)
+<img width="763" alt="Image" src="https://github.com/user-attachments/assets/b70cd095-bb04-4225-833f-60abfd730a6e">
 
 <br>
 <br>
@@ -290,7 +290,7 @@ Qiitaに詳細を執筆しております。<br>
 <br>
 <br>
 
-![退会gif](https://github.com/redeye0077/study_record/assets/88723527/a94abf6b-9280-4b0c-9dd3-06f89df461ae)
+<img width="774" height="479" alt="Image" src="https://github.com/user-attachments/assets/e9a2a5d5-af43-47a6-b55b-c1c810720508">
 
 <br>
 <br>
