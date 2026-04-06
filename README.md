@@ -120,7 +120,7 @@ Qiitaに詳細を執筆しております。<br>
 1.トップページ
 <br>
 
-<img width="1422" alt="トップページ" src="https://github.com/redeye0077/study_record/assets/88723527/4eb8a3ee-48b7-4166-95b7-62125cd3e9cc">
+<img width="1422"  alt="Image" src="https://github.com/user-attachments/assets/f1cf0bae-91c0-4431-b7e3-8f1a01673ff8">
 
 - アプリの使い方や説明を記載しています。
 
@@ -130,8 +130,7 @@ Qiitaに詳細を執筆しております。<br>
 2.ユーザー認証
 <br>
 
-<img width="585" alt="ログイン画面" src="https://github.com/redeye0077/study_record/assets/88723527/d894713f-db16-4221-89af-e87f01eda9f8">
-
+<img width="585" alt="Image" src="https://github.com/user-attachments/assets/22aa7392-5d0f-41e1-a8a1-9fd648b260bb">
 <br>
 
 - アカウント登録済みの場合はフォームにログインIDとパスワードを入力してログイン。
@@ -167,7 +166,7 @@ Qiitaに詳細を執筆しております。<br>
 4.学習記録機能
 <br>
 
-<img width="756" alt="学習記録画面" src="https://github.com/redeye0077/study_record/assets/88723527/59f6ba60-fb42-4d94-a083-3cd003056ea0">
+<img width="756" alt="Image" src="https://github.com/user-attachments/assets/75d9ce44-fc59-49f1-b9b1-1f32175f4f4b">
 
 <br>
 
@@ -184,7 +183,7 @@ Qiitaに詳細を執筆しております。<br>
 5.学習記録表示機能
 <br>
 
-<img width="790" alt="study_graph" src="https://github.com/redeye0077/study_record/assets/88723527/3e7678f5-9e69-489a-b3f3-f60612eb5a8c">
+<img width="790" alt="Image" src="https://github.com/user-attachments/assets/567495b9-be18-4fe2-a3bf-7bcde5991a90">
 
 <br>
 
@@ -216,7 +215,7 @@ Qiitaに詳細を執筆しております。<br>
 7.掲示板機能
 <br>
 
-<img width="500" height="565" alt="Image" src="https://github.com/user-attachments/assets/e2016f6e-7979-4fa9-b5f7-d234f00511f6">
+<img width="500" height="565" alt="Image" src="https://github.com/user-attachments/assets/ef7babb2-88a4-4c10-9185-60f0065fda46">
 
 <br>
 
@@ -256,7 +255,7 @@ Qiitaに詳細を執筆しております。<br>
 8.ログインID変更機能
 <br>
 
-<img width="549" alt="ログインID変更" src="https://github.com/redeye0077/study_record/assets/88723527/96b6aa5f-5664-4af9-93d7-6173cc2151af">
+<img width="549" alt="Image" src="https://github.com/user-attachments/assets/d5aa0a9e-d3eb-453b-a3c8-7e9433508cc4">
 
 <br>
 
@@ -274,8 +273,7 @@ Qiitaに詳細を執筆しております。<br>
 9.パスワード変更機能
 <br>
 
-<img width="506" alt="パスワード変更" src="https://github.com/redeye0077/study_record/assets/88723527/ab3acaa8-f166-4d47-b74b-43fb1f0a9b25">
-
+<img width="506" alt="Image" src="https://github.com/user-attachments/assets/ff48d34e-f576-4729-be64-863b6e379dab">
 <br>
 
 - 新しいパスワードを入力して変更します。
