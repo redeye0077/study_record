@@ -142,7 +142,7 @@ Qiitaに詳細を執筆しております。<br>
 <br>
 <br>
 
-![新規登録gif](https://github.com/redeye0077/study_record/assets/88723527/ab44c649-6400-4234-a73b-9b9e53416193)
+![Image](https://github.com/user-attachments/assets/85254b8e-b7a1-4d7d-8d40-79a64ef2375d)
 
 <br>
 <br>
