@@ -2,18 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Models\Study;
 
 class CalendarController extends Controller
 {
     public function index(Request $request)
     {
         // studiesテーブルから日付と学習時間を取得
-        $studies = DB::table('studies')
-        ->select('date', 'subject', DB::raw('SUM(hour * 60 + minutes) as duration'))
-        ->where('user_id', Auth::id())
+        $studies = Study::where('user_id', auth()->id())
+        ->selectRaw('date, subject, SUM(hour * 60 + minutes) as duration')
         ->groupBy('date', 'subject')
         ->orderBy('date', 'asc')
         ->get();
