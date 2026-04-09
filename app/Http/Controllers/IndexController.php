@@ -49,9 +49,8 @@ class IndexController extends Controller
         $progressRate = min(max($rate, 0), 100);
         
         // studiesテーブルから日付と学習時間を取得
-        $studies = DB::table('studies')
-        ->select('date', 'subject', DB::raw('SUM(hour * 60 + minutes) as duration'))
-        ->where('user_id', Auth::id())
+        $studies = Study::where('user_id', auth()->id())
+        ->selectRaw('date, subject, SUM(hour * 60 + minutes) as duration')
         ->groupBy('date', 'subject')
         ->orderBy('date', 'asc')
         ->get();
