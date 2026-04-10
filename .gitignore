@@ -1,18 +1,42 @@
-/node_modules
-/public/build
-/public/hot
-/public/storage
-/storage/*.key
+# Dependencies
 /vendor
+/node_modules
+
+# Environment
 .env
 .env.backup
 .env.production
+auth.json
+
+# Build artifacts
+/public/build
+/public/hot
+
+# Storage
+/public/storage
+/storage/*.key
+/storage/logs
+/storage/framework/cache
+/storage/framework/sessions
+/storage/framework/views
+
+# Cache
+/bootstrap/cache/*.php
 .phpunit.result.cache
+
+# Homestead
 Homestead.json
 Homestead.yaml
-auth.json
+
+# Logs
 npm-debug.log
 yarn-error.log
+
+# Editor / IDE
 /.fleet
 /.idea
 /.vscode
+
+# OS / personal
+.DS_Store
+.bash_profile
