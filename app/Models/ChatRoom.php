@@ -8,7 +8,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class ChatRoom extends Model
 {
     use HasFactory;
-    protected $guarded = ['id'];
+    
+    protected $fillable = [
+        'name',
+    ];
     
     public function users()
     {

@@ -8,8 +8,6 @@ class MonthlyGoal extends Model
 {
     protected $table = 'monthly_goal';
 
-    protected $guarded = ['id'];
-
     protected $fillable = [
         'user_id',
         'month',
