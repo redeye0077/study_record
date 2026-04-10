@@ -29,8 +29,11 @@ class IndexController extends Controller
         }
 
         // studiesテーブルに保存されている月の総勉強時間を取得する
+        $start = Carbon::now()->startOfMonth();
+        $end = Carbon::now()->endOfMonth();
+
         $totalStudyTime = Study::where('user_id', $user->id)
-        ->where('date', 'like', Carbon::now()->format('Y-m') . '%')
+        ->whereBetween('date', [$start, $end])
         ->sum('duration');
 
         // 総勉強時間を時と分に分解する
