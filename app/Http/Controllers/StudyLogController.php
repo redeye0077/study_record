@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\StudyLogRequest;
-use App\Models\StudyLog;
+use App\Models\Study;
 
 class StudyLogController extends Controller
 {
@@ -22,8 +22,8 @@ class StudyLogController extends Controller
         $subject = $request->input('subject');
         $date = $request -> input('date');
 
-        //StudyLogモデルを使ってDBに保存する
-        $studyLog = new StudyLog();
+        //Studyモデルを使ってDBに保存する
+        $studyLog = new Study();
         $studyLog->user_id = auth()->user()->id;
         $studyLog->hour = $hour;
         $studyLog->minutes = $minutes;

@@ -8,19 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Study extends Model
 {
 
-    protected $fillable = ['user_id', 'date', 'hour', 'minutes', 'subject', 'study_time', 'month', 'duration'];
-
-
-    protected $guarded = ['id'];
+    protected $fillable = ['user_id', 'date', 'hour', 'minutes', 'subject', 'study_time', 'duration'];
 
     public function user()
     {
         return $this->belongsTo('App\Models\User');
-    }
-
-    public function goal()
-    {
-        return $this->hasOne('App\Models\Goal');
     }
 
     public function setStudyTimeAttribute($value)
