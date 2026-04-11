@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use App\Models\MonthlyGoal;
 use App\Models\Study;
@@ -13,14 +12,9 @@ class IndexController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $currentMonth = Carbon::now()->startOfMonth();
         
         //monthly_goal_tableに保存されているtarget_hourとtarget_minutesを取得する
-        $monthlyGoal = MonthlyGoal::where('user_id', $user->id)
-        ->whereDate('month', $currentMonth)
-        ->select(['target_hour', 'target_minutes'])
-        ->latest('updated_at')
-        ->first();
+        $monthlyGoal = $this->getMonthlyGoal($user->id);
 
         // 目標時間の合計
         $targetHours = 0;
@@ -29,12 +23,7 @@ class IndexController extends Controller
         }
 
         // studiesテーブルに保存されている月の総勉強時間を取得する
-        $start = Carbon::now()->startOfMonth();
-        $end = Carbon::now()->endOfMonth();
-
-        $totalStudyTime = Study::where('user_id', $user->id)
-        ->whereBetween('date', [$start, $end])
-        ->sum('duration');
+        $totalStudyTime = $this->getMonthlyStudyTime($user->id);
 
         // 総勉強時間を時と分に分解する
         $resultHour = floor($totalStudyTime / 60);
@@ -42,7 +31,6 @@ class IndexController extends Controller
 
         // 達成率
         $achievementRate = 0;
-
         if ($targetHours > 0) {
             $achievementRate = round(($totalStudyTime / $targetHours) * 100);
         }
@@ -52,11 +40,7 @@ class IndexController extends Controller
         $progressRate = min(max($rate, 0), 100);
         
         // studiesテーブルから日付と学習時間を取得
-        $studies = Study::where('user_id', auth()->id())
-        ->selectRaw('date, subject, SUM(hour * 60 + minutes) as duration')
-        ->groupBy('date', 'subject')
-        ->orderBy('date', 'asc')
-        ->get();
+        $studies = $this->getStudies($user->id);
 
         //日付と科目を配列に格納
         $dates = [];
@@ -126,4 +110,38 @@ class IndexController extends Controller
         //ビューに渡す
         return view('index', compact('dates', 'subjects', 'data', 'monthlyGoal', 'targetHours', 'resultHour', 'resultMinutes', 'achievementRate', 'progressRate', 'status', 'actual', 'goal', 'pace', 'projected'));
     }
+
+    // studiesテーブルに保存されている月の総勉強時間を取得する
+    private function getMonthlyStudyTime(int $userId)
+    {
+        $start = Carbon::now()->startOfMonth();
+        $end = Carbon::now()->endOfMonth();
+
+        return Study::where('user_id', $userId)
+            ->whereBetween('date', [$start, $end])
+            ->sum('duration');
+    }
+
+    //monthly_goal_tableに保存されているtarget_hourとtarget_minutesを取得する
+    private function getMonthlyGoal(int $userId)
+    {
+        $currentMonth = Carbon::now()->startOfMonth();
+        
+        return MonthlyGoal::where('user_id', $userId)
+        ->whereDate('month', $currentMonth)
+        ->select(['target_hour', 'target_minutes'])
+        ->latest('updated_at')
+        ->first();
+    }
+
+    // studiesテーブルから日付と学習時間を取得
+    private function getStudies(int $userId)
+    {
+        return Study::where('user_id', $userId)
+        ->selectRaw('date, subject, SUM(hour * 60 + minutes) as duration')
+        ->groupBy('date', 'subject')
+        ->orderBy('date', 'asc')
+        ->get();
+    }
+
 }
