@@ -4,8 +4,7 @@
 
 # Environment
 .env
-.env.backup
-.env.production
+.env.*
 auth.json
 
 # Build artifacts
@@ -20,17 +19,23 @@ auth.json
 /storage/framework/sessions
 /storage/framework/views
 
+# アップロードファイルは追跡しない
+/storage/app/public/*
+!/storage/app/public/.gitignore
+
 # Cache
 /bootstrap/cache/*.php
 .phpunit.result.cache
+
+# Database
+/database/*.sqlite
 
 # Homestead
 Homestead.json
 Homestead.yaml
 
 # Logs
-npm-debug.log
-yarn-error.log
+*.log
 
 # Editor / IDE
 /.fleet
