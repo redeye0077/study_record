@@ -76,8 +76,8 @@
       <div class="form-group">
         <div class="learning-date">
           <p>学習時間</p>
-          <input type="number" name="hour" id="hour" class="form-control" value="{{ old('hour') }}" min="0" max="24"><span>時間</span>
-          <input type="number" name="minutes" id="minutes" class="form-control" value="{{ old('minutes') }}" min="0" max="59"><span>分</span>               
+          <input type="number" name="hour" id="hour" class="form-control" value="{{ old('hour') }}"><span>時間</span>
+          <input type="number" name="minutes" id="minutes" class="form-control" value="{{ old('minutes') }}"><span>分</span>               
         </div>
 
         @error('hour')

@@ -24,10 +24,10 @@ class StudyLogRequest extends FormRequest
     public function rules()
     {
         return [
-            'hour' => 'required|integer|between:0,23',
-            'minutes' => 'required|integer|between:0,59',
-            'subject' => 'required|string|max:50',
-            'date' => 'required|date',
+            'hour' => 'bail|required|integer|min:0|max:23',
+            'minutes' => 'bail|required|integer|min:0|max:59',
+            'subject' => 'bail|required|string|max:50',
+            'date' => 'bail|required|date',
         ];
     }
 
@@ -39,8 +39,10 @@ class StudyLogRequest extends FormRequest
             'string' => ':attributeは文字で入力してください。',
             'max' => ':attributeは50文字以内で入力してください。',
             'date' => ':attributeは日付で入力してください。',
-            'between' => ':attributeは0以上23以下で入力してください。',
-            'between' => ':attributeは0以上59以下で入力してください。',
+            'hour.min' => '学習時間は0以上で入力してください',
+            'hour.max' => '学習時間は23以下で入力してください',
+            'minutes.min' => '学習分は0以上で入力してください',
+            'minutes.max' => '学習分は59以下で入力してください',
         ];
     }
 

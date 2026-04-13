@@ -101,9 +101,17 @@ form {
     align-items: center;
     justify-content: center;
     text-align: center;
-    max-width: 500px;
+    max-width: 800px;
     width: 100%;
-    margin: 1rem;
+    margin:1rem;
+}
+
+.study-contents input {
+    width: 200px;
+}
+
+.learning-date input {
+    width: 80px;
 }
 
 p {
