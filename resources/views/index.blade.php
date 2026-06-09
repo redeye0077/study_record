@@ -9,7 +9,9 @@
 
 @section('content')
 <header class="site-header" id="header">
-    <img src="/images/studyrecord_logo.png" alt="StudyRecord" class="logo-img" width="250" height="30">
+    <a href="{{ route('index.index') }}">
+        <img src="/images/studyrecord_logo.png" alt="StudyRecord" class="logo-img" width="250" height="30">
+    </a>
     {{-- PC用メニュー --}}
     <ul class="header-button pc-menu">
         <li>
